@@ -21,7 +21,7 @@ struct results : Decodable{
 }
 
 struct name : Decodable{
-    var  title: String?
+    var title: String?
     var first: String?
     var last: String?
 }
@@ -39,7 +39,6 @@ struct picture : Decodable{
 
 struct location: Decodable{
     var city: String?
-    var state: String?
     var coordinates: coordinates?
     var timezone: timezone?
 }

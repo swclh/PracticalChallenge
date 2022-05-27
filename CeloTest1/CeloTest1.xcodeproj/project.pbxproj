@@ -17,6 +17,8 @@
 		5C4A434828406D490081EA90 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A434728406D490081EA90 /* UserManager.swift */; };
 		5C4A434A284070AC0081EA90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A4349284070AC0081EA90 /* User.swift */; };
 		5C4A434C2840791B0081EA90 /* userDataDecoderClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A434B2840791B0081EA90 /* userDataDecoderClass.swift */; };
+		5C4A43512840DA0A0081EA90 /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A434F2840DA0A0081EA90 /* UserViewCell.swift */; };
+		5C4A43522840DA0A0081EA90 /* UserViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4A43502840DA0A0081EA90 /* UserViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		5C4A434728406D490081EA90 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		5C4A4349284070AC0081EA90 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5C4A434B2840791B0081EA90 /* userDataDecoderClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDataDecoderClass.swift; sourceTree = "<group>"; };
+		5C4A434F2840DA0A0081EA90 /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
+		5C4A43502840DA0A0081EA90 /* UserViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				5C4A433128404AA70081EA90 /* Main.storyboard */,
+				5C4A434F2840DA0A0081EA90 /* UserViewCell.swift */,
+				5C4A43502840DA0A0081EA90 /* UserViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,6 +170,7 @@
 				5C4A433B28404AA80081EA90 /* LaunchScreen.storyboard in Resources */,
 				5C4A433828404AA80081EA90 /* Assets.xcassets in Resources */,
 				5C4A433328404AA70081EA90 /* Main.storyboard in Resources */,
+				5C4A43522840DA0A0081EA90 /* UserViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +186,7 @@
 				5C4A434C2840791B0081EA90 /* userDataDecoderClass.swift in Sources */,
 				5C4A432C28404AA70081EA90 /* AppDelegate.swift in Sources */,
 				5C4A433628404AA70081EA90 /* CeloTest1.xcdatamodeld in Sources */,
+				5C4A43512840DA0A0081EA90 /* UserViewCell.swift in Sources */,
 				5C4A432E28404AA70081EA90 /* SceneDelegate.swift in Sources */,
 				5C4A434A284070AC0081EA90 /* User.swift in Sources */,
 			);
