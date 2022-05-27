@@ -9,12 +9,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var usersTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Initial Commit Test
+        UserManager.instance.performRequest()
+        
     }
-
 
 }
 
