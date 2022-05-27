@@ -81,14 +81,16 @@ class UserManager{
     
     static func DateToString(date: Date) -> String
     {
-        var str = ""
-        let dateComponents = NSCalendar.current.dateComponents([.year, .month, .day], from: date)
         
-        if let year = dateComponents.year, let month = dateComponents.month,
-           let day = dateComponents.day{
-            str =  "\(String(year))-\(String(month))-\(String(day))"
-        }
-        return str
+        
+        // Create Date Formatter
+        let dateFormatter = DateFormatter()
+
+        // Set Date Format
+        dateFormatter.dateFormat = "YYYY/MM/dd"
+
+        // Convert Date to String
+        return dateFormatter.string(from: date)
     }
     
     static func getImageByUrl(urlString: String, completionBlock: @escaping(Data)->Void)

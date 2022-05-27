@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var dataSegment: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var results = 10
+    var results = 15
     var baseUrl : String{
         get {
             return "https://randomuser.me/api/?page=3&results=\(results)&seed=abc"
@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     }
     
     var users = [User]()
+    var user = User()
     
     
     override func viewDidLoad() {
@@ -67,11 +68,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
             cell.gender.text = gender
             cell.dateOfBirth.text = UserManager.DateToString(date: dob)
             cell.title.text = title
-            
-            print(name.count)
-            
-            
-            
+   
         }
         
         if users[indexPath.row].Thumbnail != nil{
@@ -103,6 +100,20 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
             }
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.user = users[indexPath.row]
+        performSegue(withIdentifier: "ToUserDetails", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let DetailVC = (segue.destination as? DetailViewController)
+        {
+            DetailVC.user = self.user
+        }
+    }
+    
     
     func loadData(with :String = "")
     {
