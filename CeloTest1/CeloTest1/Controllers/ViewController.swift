@@ -6,27 +6,32 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var usersTable: UITableView!
-    @IBOutlet weak var mage: UIImageView!
     @IBOutlet weak var dataSegment: UISegmentedControl!
-    
     @IBOutlet weak var searchBar: UISearchBar!
     
-    let baseUrl = "https://randomuser.me/api/?results=50"
+    var results = 10
+    var baseUrl : String{
+        get {
+            return "https://randomuser.me/api/?page=3&results=\(results)&seed=abc"
+        }
+    }
     
     var users = [User]()
-    
-    var img : Data?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Setting up delegates
         usersTable.delegate = self
         usersTable.dataSource = self
+        searchBar.delegate = self
+        //register Custom XIB/NIB Cell for User Table
         usersTable.register(UINib(nibName: "UserViewCell", bundle: nil), forCellReuseIdentifier: "ReuseableUserNib")
         
         loadData()
@@ -36,9 +41,11 @@ class ViewController: UIViewController {
     @IBAction func valueChangedOfSegment(_ sender: UISegmentedControl) {
     }
     
-        
+    
         
 }
+
+// MARK:- Table View Delegate Methods
 
 extension ViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,27 +64,22 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
            let title = users[indexPath.row].title,let dob = users[indexPath.row].DateOfBirth{
             
             cell.name.text = name
-            print(name)
-            print(gender)
-            print(UserManager.DateToString(date: dob))
-            print(title)
-            
             cell.gender.text = gender
             cell.dateOfBirth.text = UserManager.DateToString(date: dob)
             cell.title.text = title
+            
+            print(name.count)
+            
             
             
         }
         
         if users[indexPath.row].Thumbnail != nil{
             cell.imgView.image = UIImage(data: users[indexPath.row].Thumbnail!)
-            print("found data")
-            
         }
         else{
             cell.imgView.image = UIImage(systemName: "person")
             cell.imgView.image?.withTintColor(UIColor.white)
-            print("couldnt found data")
         }
         
         
@@ -90,16 +92,62 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
         return 140
     }
     
-    func loadData()
-    {
-        UserManager.instance.performRequest(urlString: baseUrl) { users in
-            self.users = users
-            DispatchQueue.main.async {
-                self.usersTable.reloadData()
-            }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if (indexPath.row == users.count - 1 && searchBar.text == ""){
+            print("last row")
             
+            if self.results < 200 {
+                self.results = self.results + 10
+                loadData()
+                usersTable.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            }
         }
     }
+    
+    func loadData(with :String = "")
+    {
+        ProgressHUD.show()
+        if(with == "")
+        {
+            UserManager.instance.performRequest(urlString: baseUrl) { users in
+                
+                DispatchQueue.main.async {
+                    self.users = users
+                    self.usersTable.reloadData()
+                    ProgressHUD.dismiss()
+                }
+                
+            }
+        }
+        else{
+            
+            let tempHolder = self.results
+            self.results = 200
+            
+            UserManager.instance.performRequest(urlString: baseUrl) { users in
+                
+                DispatchQueue.main.async {
+                    
+                    let arr = users.filter {
+                        $0.Name?.uppercased().range(of: (self.searchBar.text!).uppercased()) != nil
+                    }
+                    
+                    self.users = arr
+                    self.usersTable.reloadData()
+                    if self.users.count > 0 {
+                        self.usersTable.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+                    }
+                    ProgressHUD.dismiss()
+                }
+                
+            }
+            
+            self.results = tempHolder
+        }
+        
+    }
+    
+    
     
     
     
@@ -107,3 +155,39 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
 }
 
 
+extension ViewController : UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if(searchBar.text?.count == 0)
+        {
+            
+        }
+        else
+        {
+            if(searchBar.text!.count < 2){
+                let alert = UIAlertController(title: "Validation", message: "you need to provide atleast two characters", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ok", style: .cancel)
+                alert.addAction(action)
+                present(alert, animated: true)
+            }
+            else{
+            loadData(with: searchBar.text!)
+            }
+        }
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if(searchBar.text?.count == 0)
+        {
+            loadData()
+            
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+        }
+        else
+        {
+            
+        }
+    }
+}
