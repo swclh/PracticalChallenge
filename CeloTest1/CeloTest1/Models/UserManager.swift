@@ -51,17 +51,13 @@ class UserManager{
                         let email = data.email,
                    let city = data.location?.city,let title = data.name?.title{
                     
-                    user.Name = FirstName+" "+LastName
-                    user.City = city
-                    user.Gender = Gender
-                    UserManager.getImageByUrl(urlString: Thumbnail, completionBlock: { data in
-                        user.Thumbnail = data
-                    })
-                    user.DateOfBirth = String(DOB.prefix(10)).toDate()
-                    UserManager.getImageByUrl(urlString: ProfilePic, completionBlock: { data in
-                        user.ProfilePicture = data
-                    })
-                    user.Email = email
+                    user.name = FirstName+" "+LastName
+                    user.city = city
+                    user.gender = Gender
+                    user.thumbnail = Thumbnail
+                    user.dateOfBirth = String(DOB.prefix(10)).toDate()
+                    user.profilePicture = ProfilePic
+                    user.email = email
                     user.title = title
                     
                     users.append(user)
@@ -79,10 +75,8 @@ class UserManager{
         
     }
     
-    static func DateToString(date: Date) -> String
+    func DateToString(date: Date) -> String
     {
-        
-        
         // Create Date Formatter
         let dateFormatter = DateFormatter()
 
@@ -93,7 +87,7 @@ class UserManager{
         return dateFormatter.string(from: date)
     }
     
-    static func getImageByUrl(urlString: String, completionBlock: @escaping(Data)->Void)
+    func getImageByUrl(urlString: String, completionBlock: @escaping(Data)->Void)
     {
         let url = URL(string: urlString)
         let session = URLSession(configuration: .default)

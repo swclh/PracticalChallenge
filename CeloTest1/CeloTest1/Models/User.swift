@@ -7,14 +7,14 @@
 
 import Foundation
 
-class User {
+class User3 {
     
     var title: String?
-    var Name: String?
-    var Gender: String?
-    var DateOfBirth: Date?
-    var Thumbnail: Data?
-    var ProfilePicture: Data?
-    var Email: String?
-    var City: String?
+    var name: String?
+    var gender: String?
+    var dateOfBirth: Date?
+    var thumbnail: Data?
+    var profilePicture: Data?
+    var email: String?
+    var city: String?
 }

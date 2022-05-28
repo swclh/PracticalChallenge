@@ -33,18 +33,21 @@ class DetailViewController: UIViewController {
     }
     
     func setUserValues(){
-        if let name = user?.Name, let email = user?.Email, let city = user?.City,
-           let dob = user?.DateOfBirth, let gender = user?.Gender, let data = user?.ProfilePicture{
+        if let name = user?.name, let email = user?.email, let city = user?.city,
+           let dob = user?.dateOfBirth, let gender = user?.gender, let url = user?.profilePicture{
             
             print(dob)
             
             Name.text = name
             Email.text = email
             City.text = city
-            DateOfBirth.text = UserManager.DateToString(date: dob)
+            DateOfBirth.text = UserManager.instance.DateToString(date: dob)
             Gender.text = gender
             
-            profilePicture.image = UIImage(data: data)
+            UserManager.instance.getImageByUrl(urlString: url) { data in
+                self.profilePicture.image = UIImage(data: data)
+            }
+            
             
         }
     }

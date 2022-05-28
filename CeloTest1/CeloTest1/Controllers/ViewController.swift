@@ -61,26 +61,19 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReuseableUserNib", for: indexPath) as! UserViewCell
     
         
-        if let name = users[indexPath.row].Name, let gender = users[indexPath.row].Gender,
-           let title = users[indexPath.row].title,let dob = users[indexPath.row].DateOfBirth{
+        if let name = users[indexPath.row].name, let gender = users[indexPath.row].gender,
+           let title = users[indexPath.row].title,let dob = users[indexPath.row].dateOfBirth{
             
             cell.name.text = name
             cell.gender.text = gender
-            cell.dateOfBirth.text = UserManager.DateToString(date: dob)
+            cell.dateOfBirth.text = UserManager.instance.DateToString(date: dob)
             cell.title.text = title
    
         }
         
-        if users[indexPath.row].Thumbnail != nil{
-            cell.imgView.image = UIImage(data: users[indexPath.row].Thumbnail!)
+        UserManager.instance.getImageByUrl(urlString: users[indexPath.row].thumbnail!) { data in
+            cell.imgView.image = UIImage(data: data)
         }
-        else{
-            cell.imgView.image = UIImage(systemName: "person")
-            cell.imgView.image?.withTintColor(UIColor.white)
-        }
-        
-        
-        
         
         return cell
     }
@@ -115,7 +108,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
     }
     
     
-    func loadData(with :String = "")
+    /*func loadData(with :String = "")
     {
         ProgressHUD.show()
         if(with == "")
@@ -156,10 +149,13 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
             self.results = tempHolder
         }
         
+    }*/
+    
+    
+    func loadData()
+    {
+        
     }
-    
-    
-    
     
     
     
@@ -181,7 +177,7 @@ extension ViewController : UISearchBarDelegate{
                 present(alert, animated: true)
             }
             else{
-            loadData(with: searchBar.text!)
+                //loadData(with: searchBar.text!)
             }
         }
         
