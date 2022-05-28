@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JRQ-dA-DDn">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,42 +12,41 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CeloTest1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="WZj-w0-X88">
-                                <rect key="frame" x="15" y="54" width="290" height="45"/>
+                                <rect key="frame" x="15" y="54" width="360" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVw-7d-FAm">
-                                        <rect key="frame" x="0.0" y="0.0" width="144.5" height="45"/>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="179.66666666666666" height="45"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="35"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Qgw-aa-quz">
-                                        <rect key="frame" x="145.5" y="0.0" width="144.5" height="46"/>
-                                        <segments>
-                                            <segment title="API"/>
-                                            <segment title="Local"/>
-                                        </segments>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcO-pT-6FH">
+                                        <rect key="frame" x="180.66666666666663" y="0.0" width="179.33333333333337" height="45"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.down" catalog="system"/>
                                         <connections>
-                                            <action selector="valueChangedOfSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="Rh7-qH-8Am"/>
+                                            <action selector="CallAPI_clicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VdM-V0-tX8"/>
                                         </connections>
-                                    </segmentedControl>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="MHo-ba-22F"/>
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kjx-ox-f7e">
-                                <rect key="frame" x="0.0" y="155" width="320" height="433"/>
+                                <rect key="frame" x="0.0" y="155" width="390" height="709"/>
                                 <color key="backgroundColor" red="0.0" green="0.72156862749999995" blue="0.58039215690000001" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.0" green="0.72156862749999995" blue="0.58039215690000001" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="separatorColor" red="0.0" green="0.72156862749999995" blue="0.58039215690000001" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.72156862749999995" blue="0.58039215690000001" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="zID-Tp-39E">
-                                <rect key="frame" x="0.0" y="104" width="320" height="51"/>
+                                <rect key="frame" x="0.0" y="104" width="390" height="51"/>
                                 <color key="barTintColor" red="0.0" green="0.72156862749999995" blue="0.58039215690000001" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -69,7 +68,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="H2e-70-rst"/>
                     <connections>
-                        <outlet property="dataSegment" destination="Qgw-aa-quz" id="ASi-up-GoG"/>
+                        <outlet property="CallAPI" destination="wcO-pT-6FH" id="wM2-oq-irv"/>
                         <outlet property="searchBar" destination="zID-Tp-39E" id="mEC-Zp-LbS"/>
                         <outlet property="usersTable" destination="kjx-ox-f7e" id="1NL-Xv-mlH"/>
                         <segue destination="fyP-cc-WI1" kind="show" identifier="ToUserDetails" id="Xmp-1F-seH"/>
@@ -84,41 +83,41 @@
             <objects>
                 <viewController id="fyP-cc-WI1" customClass="DetailViewController" customModule="CeloTest1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WaJ-1T-bqe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mfl-De-Gh9">
-                                <rect key="frame" x="35" y="44" width="250" height="270"/>
+                                <rect key="frame" x="35" y="59" width="320" height="270"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="270" id="g0N-x4-JgL"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shafeerehman57@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQR-VQ-OLr">
-                                <rect key="frame" x="15" y="378" width="290" height="27.5"/>
+                                <rect key="frame" x="15" y="393" width="360" height="27.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auckland" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8u-y3-fPC">
-                                <rect key="frame" x="15" y="420.5" width="290" height="39"/>
+                                <rect key="frame" x="15" y="435.66666666666669" width="360" height="39"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="male" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQw-ba-Q4w">
-                                <rect key="frame" x="15" y="469.5" width="290" height="39"/>
+                                <rect key="frame" x="15" y="484.66666666666669" width="360" height="39.000000000000057"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shafee Rehman" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6BH-Yq-oZE">
-                                <rect key="frame" x="15" y="329" width="290" height="39"/>
+                                <rect key="frame" x="15" y="344" width="360" height="39"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1996/01/21" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwb-LU-O9b">
-                                <rect key="frame" x="15" y="518.5" width="300" height="39"/>
+                                <rect key="frame" x="15" y="533.66666666666663" width="370" height="39"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -130,7 +129,7 @@
                             <constraint firstItem="OQw-ba-Q4w" firstAttribute="leading" secondItem="VQn-bU-KhY" secondAttribute="leading" constant="15" id="CeP-hH-420"/>
                             <constraint firstItem="r8u-y3-fPC" firstAttribute="top" secondItem="FQR-VQ-OLr" secondAttribute="bottom" constant="15" id="DKn-cB-h2a"/>
                             <constraint firstItem="VQn-bU-KhY" firstAttribute="trailing" secondItem="mfl-De-Gh9" secondAttribute="trailing" constant="35" id="Dsh-6c-kC7"/>
-                            <constraint firstItem="mfl-De-Gh9" firstAttribute="top" secondItem="VQn-bU-KhY" secondAttribute="top" id="HpF-xq-jme"/>
+                            <constraint firstItem="mfl-De-Gh9" firstAttribute="top" secondItem="VQn-bU-KhY" secondAttribute="top" constant="15" id="HpF-xq-jme"/>
                             <constraint firstItem="mfl-De-Gh9" firstAttribute="leading" secondItem="VQn-bU-KhY" secondAttribute="leading" constant="35" id="LWc-Fy-ug2"/>
                             <constraint firstItem="VQn-bU-KhY" firstAttribute="trailing" secondItem="FQR-VQ-OLr" secondAttribute="trailing" constant="15" id="MuA-kT-8Jo"/>
                             <constraint firstItem="VQn-bU-KhY" firstAttribute="trailing" secondItem="FQR-VQ-OLr" secondAttribute="trailing" constant="15" id="QdJ-sq-4sE"/>
@@ -175,25 +174,9 @@
             </objects>
             <point key="canvasLocation" x="1255.2" y="66.11694152923539"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="zwT-D0-Ki2">
-            <objects>
-                <navigationController id="JRQ-dA-DDn" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ASH-K7-Be9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="GhC-GK-J9w"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tUP-sc-XfI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1234" y="-72"/>
-        </scene>
     </scenes>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
     </resources>
 </document>

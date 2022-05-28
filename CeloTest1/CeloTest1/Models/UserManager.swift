@@ -11,8 +11,9 @@ import UIKit
 class UserManager{
     
     static var instance = UserManager()
+    let db = DatabaseManager.shared
     
-    func performRequest(urlString: String, completionBlock: @escaping ([User]) -> Void)
+    func performRequest(urlString: String, completionBlock: @escaping () -> Void)
     {
         let url = URL(string: urlString)
         let session = URLSession(configuration: .default)
@@ -25,7 +26,8 @@ class UserManager{
             {
                 if let safeData = data{
                     print("From model \(safeData)")
-                    completionBlock(self.ParseJSON(userData: safeData))
+                    self.ParseJSON(userData: safeData)
+                    completionBlock()
                 }
             }
         }
@@ -34,16 +36,18 @@ class UserManager{
     
     }
     
-    func ParseJSON(userData : Data) -> [User]
+    func ParseJSON(userData : Data)
     {
         let decoder = JSONDecoder()
-        var users = [User]()
         
         do{
             let decodedData = try decoder.decode(userDataDecoderClass.self, from: userData)
             
+            db.DeleteAll(objectType: User.self)
+            
             for data in decodedData.results {
-                let user = User()
+                
+                let user = db.add(objectType: User.self)
                 
                 if let FirstName = data.name?.first, let LastName = data.name?.last,
                    let Gender = data.gender, let DOB = data.dob?.date,
@@ -51,25 +55,24 @@ class UserManager{
                         let email = data.email,
                    let city = data.location?.city,let title = data.name?.title{
                     
-                    user.name = FirstName+" "+LastName
-                    user.city = city
-                    user.gender = Gender
-                    user.thumbnail = Thumbnail
-                    user.dateOfBirth = String(DOB.prefix(10)).toDate()
-                    user.profilePicture = ProfilePic
-                    user.email = email
-                    user.title = title
-                    
-                    users.append(user)
-                    
+                    user?.name = FirstName+" "+LastName
+                    user?.city = city
+                    user?.gender = Gender
+                    user?.thumbnail = Thumbnail
+                    user?.dateOfBirth = String(DOB.prefix(10)).toDate()
+                    user?.profilePicture = ProfilePic
+                    user?.email = email
+                    user?.title = title
+        
                 }
             }
             
-            return users
+            db.save()
+           
         }
         catch{
             print(error)
-            return users
+            
         }
         
         

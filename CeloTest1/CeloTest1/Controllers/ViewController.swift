@@ -11,19 +11,21 @@ import ProgressHUD
 class ViewController: UIViewController {
 
     @IBOutlet weak var usersTable: UITableView!
-    @IBOutlet weak var dataSegment: UISegmentedControl!
+    @IBOutlet weak var CallAPI: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var results = 15
+    var results = 100
+    var rows = 10
     var baseUrl : String{
         get {
-            return "https://randomuser.me/api/?page=3&results=\(results)&seed=abc"
+            return "https://randomuser.me/api/?results=\(results)"
         }
     }
     
     var users = [User]()
     var user = User()
-    
+    let db = DatabaseManager.shared
+    let UD = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +37,28 @@ class ViewController: UIViewController {
         //register Custom XIB/NIB Cell for User Table
         usersTable.register(UINib(nibName: "UserViewCell", bundle: nil), forCellReuseIdentifier: "ReuseableUserNib")
         
+        self.setApiButton()
         loadData()
         
     }
     
-    @IBAction func valueChangedOfSegment(_ sender: UISegmentedControl) {
+    @IBAction func CallAPI_clicked(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Call API to fetch data?", message: "this action will get data and save it Locally", preferredStyle: .alert)
+        
+        let action1 = UIAlertAction(title: "Yes", style: .default) { UIAlertAction in
+            
+            //Calling Data through API
+            UserManager.instance.performRequest(urlString: self.baseUrl) {
+                self.loadData()
+                self.UD.set(true, forKey: "loadedDB")
+            }
+        }
+        let action2 = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addAction(action2)
+        alert.addAction(action1)
+        
+        present(alert, animated: true)
     }
     
     
@@ -72,7 +91,11 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
         }
         
         UserManager.instance.getImageByUrl(urlString: users[indexPath.row].thumbnail!) { data in
-            cell.imgView.image = UIImage(data: data)
+          
+            DispatchQueue.main.async {
+                cell.imgView.image = UIImage(data: data)
+            }
+            
         }
         
         return cell
@@ -86,10 +109,9 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
         if (indexPath.row == users.count - 1 && searchBar.text == ""){
             print("last row")
             
-            if self.results < 200 {
-                self.results = self.results + 10
-                loadData()
-                usersTable.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            if self.rows < results {
+                self.rows = self.rows + 10
+                loadData(str: "", predicates: [], SortKey: "name", rows: self.rows)
             }
         }
     }
@@ -152,11 +174,38 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
     }*/
     
     
-    func loadData()
+    func loadData(str:String = "",predicates:[NSPredicate] = [],SortKey:String = "name", rows:Int = 10)
     {
+        ProgressHUD.show()
+        if(str == "")
+        {
+            users = db.load(objectType: User.self, predicates: predicates,rows: rows,SortKey: SortKey)
+        }
+        else
+        {
+            let predicate = NSPredicate(format: "name CONTAINS[cd] %@", searchBar.text!)
+            users = db.load(objectType: User.self, predicates: [predicate], SortKey: SortKey)
+        }
+        
+        DispatchQueue.main.async {
+            self.usersTable.reloadData()
+        }
+        ProgressHUD.dismiss()
         
     }
     
+    func setApiButton()
+    {
+        DispatchQueue.main.async {
+            if self.UD.bool(forKey: "loadedDB") {
+                self.CallAPI.isHidden = true
+            }
+            else{
+                self.CallAPI.isHidden = false
+            }
+
+        }
+    }
     
     
 }
@@ -186,7 +235,7 @@ extension ViewController : UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchBar.text?.count == 0)
         {
-            loadData()
+            //loadData()
             
             DispatchQueue.main.async {
                 searchBar.resignFirstResponder()

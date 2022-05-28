@@ -45,7 +45,9 @@ class DetailViewController: UIViewController {
             Gender.text = gender
             
             UserManager.instance.getImageByUrl(urlString: url) { data in
-                self.profilePicture.image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    self.profilePicture.image = UIImage(data: data)
+                }
             }
             
             
