@@ -21,6 +21,7 @@
 		5C4A43512840DA0A0081EA90 /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A434F2840DA0A0081EA90 /* UserViewCell.swift */; };
 		5C4A43522840DA0A0081EA90 /* UserViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4A43502840DA0A0081EA90 /* UserViewCell.xib */; };
 		5C4A4354284133490081EA90 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A4353284133490081EA90 /* DetailViewController.swift */; };
+		5C982B32284270FD0052F1FD /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C982B31284270FD0052F1FD /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		5C4A434F2840DA0A0081EA90 /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
 		5C4A43502840DA0A0081EA90 /* UserViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewCell.xib; sourceTree = "<group>"; };
 		5C4A4353284133490081EA90 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5C982B31284270FD0052F1FD /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		652A8C81596B6AEFF86AF3F6 /* Pods-CeloTest1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CeloTest1.release.xcconfig"; path = "Target Support Files/Pods-CeloTest1/Pods-CeloTest1.release.xcconfig"; sourceTree = "<group>"; };
 		D9C4278CFF73DCD2FDC9D49A /* Pods-CeloTest1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CeloTest1.debug.xcconfig"; path = "Target Support Files/Pods-CeloTest1/Pods-CeloTest1.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +115,7 @@
 				5C4A434728406D490081EA90 /* UserManager.swift */,
 				5C4A4349284070AC0081EA90 /* User.swift */,
 				5C4A434B2840791B0081EA90 /* userDataDecoderClass.swift */,
+				5C982B31284270FD0052F1FD /* DatabaseManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			files = (
 				5C4A4354284133490081EA90 /* DetailViewController.swift in Sources */,
 				5C4A434828406D490081EA90 /* UserManager.swift in Sources */,
+				5C982B32284270FD0052F1FD /* DatabaseManager.swift in Sources */,
 				5C4A433028404AA70081EA90 /* ViewController.swift in Sources */,
 				5C4A434C2840791B0081EA90 /* userDataDecoderClass.swift in Sources */,
 				5C4A432C28404AA70081EA90 /* AppDelegate.swift in Sources */,
