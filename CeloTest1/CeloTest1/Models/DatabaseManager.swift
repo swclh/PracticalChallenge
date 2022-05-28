@@ -26,13 +26,12 @@ class DatabaseManager
         return object as? T
     }
     
-    func load<T:NSManagedObject>(objectType: T.Type, predicates:[NSPredicate], rows:Int = 10, SortKey:String) -> [T] {
+    func load<T:NSManagedObject>(objectType: T.Type, predicates:[NSPredicate], rows:Int, SortKey:String) -> [T] {
         
         let request = T.fetchRequest()
         request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
         request.sortDescriptors = [NSSortDescriptor(key: SortKey,ascending: true)]
         request.fetchLimit = rows
-        request.fetchOffset = 10
         
         do {
             let result = try context.fetch(request)

@@ -51,6 +51,7 @@ class ViewController: UIViewController {
             UserManager.instance.performRequest(urlString: self.baseUrl) {
                 self.loadData()
                 self.UD.set(true, forKey: "loadedDB")
+                self.setApiButton()
             }
         }
         let action2 = UIAlertAction(title: "Cancel", style: .cancel)
@@ -111,7 +112,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
             
             if self.rows < results {
                 self.rows = self.rows + 10
-                loadData(str: "", predicates: [], SortKey: "name", rows: self.rows)
+                loadData(str: "", SortKey: "name", rows: self.rows)
             }
         }
     }
@@ -128,63 +129,23 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
             DetailVC.user = self.user
         }
     }
+
+}
+
+//Load Actions
+extension ViewController{
     
-    
-    /*func loadData(with :String = "")
-    {
-        ProgressHUD.show()
-        if(with == "")
-        {
-            UserManager.instance.performRequest(urlString: baseUrl) { users in
-                
-                DispatchQueue.main.async {
-                    self.users = users
-                    self.usersTable.reloadData()
-                    ProgressHUD.dismiss()
-                }
-                
-            }
-        }
-        else{
-            
-            let tempHolder = self.results
-            self.results = 200
-            
-            UserManager.instance.performRequest(urlString: baseUrl) { users in
-                
-                DispatchQueue.main.async {
-                    
-                    let arr = users.filter {
-                        $0.Name?.uppercased().range(of: (self.searchBar.text!).uppercased()) != nil
-                    }
-                    
-                    self.users = arr
-                    self.usersTable.reloadData()
-                    if self.users.count > 0 {
-                        self.usersTable.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
-                    }
-                    ProgressHUD.dismiss()
-                }
-                
-            }
-            
-            self.results = tempHolder
-        }
-        
-    }*/
-    
-    
-    func loadData(str:String = "",predicates:[NSPredicate] = [],SortKey:String = "name", rows:Int = 10)
+    func loadData(str:String = "",SortKey:String = "name", rows:Int = 10)
     {
         ProgressHUD.show()
         if(str == "")
         {
-            users = db.load(objectType: User.self, predicates: predicates,rows: rows,SortKey: SortKey)
+            users = db.load(objectType: User.self, predicates: [],rows: rows,SortKey: SortKey)
         }
         else
         {
-            let predicate = NSPredicate(format: "name CONTAINS[cd] %@", searchBar.text!)
-            users = db.load(objectType: User.self, predicates: [predicate], SortKey: SortKey)
+            let predicate = NSPredicate(format: "name CONTAINS[cd] %@", str)
+            users = db.load(objectType: User.self, predicates: [predicate],rows: rows, SortKey: SortKey)
         }
         
         DispatchQueue.main.async {
@@ -215,7 +176,7 @@ extension ViewController : UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if(searchBar.text?.count == 0)
         {
-            
+            loadData(str: "", SortKey: "name", rows: self.rows)
         }
         else
         {
@@ -226,8 +187,12 @@ extension ViewController : UISearchBarDelegate{
                 present(alert, animated: true)
             }
             else{
-                //loadData(with: searchBar.text!)
+                loadData(str: searchBar.text!, SortKey: "name", rows: results)
             }
+        }
+        
+        DispatchQueue.main.async {
+            searchBar.resignFirstResponder()
         }
         
     }
@@ -235,15 +200,10 @@ extension ViewController : UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchBar.text?.count == 0)
         {
-            //loadData()
-            
+            loadData(str: "", SortKey: "name", rows: self.rows)
             DispatchQueue.main.async {
                 searchBar.resignFirstResponder()
             }
-        }
-        else
-        {
-            
         }
     }
 }
