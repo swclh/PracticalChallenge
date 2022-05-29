@@ -74,7 +74,7 @@ class ViewController: UIViewController {
         
 }
 
-// MARK:- Extension for Table View Delegate Methods
+// MARK: - Extension for Table View Delegate Methods
 
 extension ViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -148,7 +148,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
 
 }
 
-//MARK :- Extension for Load Actions
+//MARK: - Extension for Load Actions
 
 extension ViewController{
     
@@ -196,7 +196,7 @@ extension ViewController{
     
 }
 
-//MARK :- Extension for Search Bar Delgate Methods
+//MARK: - Extension for Search Bar Delgate Methods
 
 extension ViewController : UISearchBarDelegate
 {

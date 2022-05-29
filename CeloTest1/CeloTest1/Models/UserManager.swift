@@ -114,7 +114,7 @@ class UserManager{
     
 }
 
-// MARK :- String Extension
+//MARK: - String Extension
 
 extension String {
 
