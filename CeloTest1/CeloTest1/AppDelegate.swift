@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let container = NSPersistentContainer(name: "CeloTest1")
         
-        container.persistentStoreDescriptions.first?.type = NSSQLiteStoreType
+      //  container.persistentStoreDescriptions.first?.type = NSSQLiteStoreType
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {

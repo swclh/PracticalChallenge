@@ -81,5 +81,8 @@ class UserData: XCTestCase {
         XCTAssertEqual(26, decodedData.results[0].dob?.age)
         
     }
+    
+    func test() throws {
+    }
 
 }
