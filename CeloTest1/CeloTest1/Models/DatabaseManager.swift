@@ -32,7 +32,7 @@ class DatabaseManager
     }
     
     //Load data
-    func load<T:NSManagedObject>(objectType: T.Type, predicates:[NSPredicate], rows:Int, offset:Int = 10, SortKey:String) -> [T] {
+    func load<T:NSManagedObject>(objectType: T.Type, predicates:[NSPredicate], rows:Int, offset:Int, SortKey:String) -> [T] {
         
         let request = T.fetchRequest()
         request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)

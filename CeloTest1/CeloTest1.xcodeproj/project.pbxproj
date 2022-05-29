@@ -19,8 +19,8 @@
 		5C4A43512840DA0A0081EA90 /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A434F2840DA0A0081EA90 /* UserViewCell.swift */; };
 		5C4A43522840DA0A0081EA90 /* UserViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4A43502840DA0A0081EA90 /* UserViewCell.xib */; };
 		5C4A4354284133490081EA90 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A4353284133490081EA90 /* DetailViewController.swift */; };
-		5C9757D1284372C00048FA89 /* CeloTest1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9757D0284372C00048FA89 /* CeloTest1Tests.swift */; };
-		5C9757D8284375000048FA89 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9757D7284375000048FA89 /* UserData.swift */; };
+		5C9757D8284375000048FA89 /* UserDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9757D7284375000048FA89 /* UserDataTests.swift */; };
+		5C9757DB284384880048FA89 /* jsonObjectForTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C9757DA284384880048FA89 /* jsonObjectForTest.json */; };
 		5C982B32284270FD0052F1FD /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C982B31284270FD0052F1FD /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,8 +50,8 @@
 		5C4A43502840DA0A0081EA90 /* UserViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewCell.xib; sourceTree = "<group>"; };
 		5C4A4353284133490081EA90 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5C9757CE284372C00048FA89 /* CeloTest1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CeloTest1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C9757D0284372C00048FA89 /* CeloTest1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeloTest1Tests.swift; sourceTree = "<group>"; };
-		5C9757D7284375000048FA89 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		5C9757D7284375000048FA89 /* UserDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataTests.swift; sourceTree = "<group>"; };
+		5C9757DA284384880048FA89 /* jsonObjectForTest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jsonObjectForTest.json; sourceTree = "<group>"; };
 		5C982B31284270FD0052F1FD /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,10 +139,18 @@
 		5C9757CF284372C00048FA89 /* CeloTest1Tests */ = {
 			isa = PBXGroup;
 			children = (
-				5C9757D0284372C00048FA89 /* CeloTest1Tests.swift */,
-				5C9757D7284375000048FA89 /* UserData.swift */,
+				5C9757D9284383FB0048FA89 /* fixtures */,
+				5C9757D7284375000048FA89 /* UserDataTests.swift */,
 			);
 			path = CeloTest1Tests;
+			sourceTree = "<group>";
+		};
+		5C9757D9284383FB0048FA89 /* fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				5C9757DA284384880048FA89 /* jsonObjectForTest.json */,
+			);
+			path = fixtures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C9757DB284384880048FA89 /* jsonObjectForTest.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,8 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C9757D8284375000048FA89 /* UserData.swift in Sources */,
-				5C9757D1284372C00048FA89 /* CeloTest1Tests.swift in Sources */,
+				5C9757D8284375000048FA89 /* UserDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
