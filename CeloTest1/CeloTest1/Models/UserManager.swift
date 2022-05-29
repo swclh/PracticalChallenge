@@ -10,9 +10,11 @@ import UIKit
 
 class UserManager{
     
+    //Defining Singleton for Shared use
     static var instance = UserManager()
     let db = DatabaseManager.shared
     
+    //this Action runs the API and loads it to DB
     func performRequest(urlString: String, completionBlock: @escaping () -> Void)
     {
         let url = URL(string: urlString)

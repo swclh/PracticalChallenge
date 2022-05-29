@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var results = 100
-    var rows = 10
+    var offset = 0
     var baseUrl : String{
         get {
             return "https://randomuser.me/api/?results=\(results)"
@@ -24,6 +24,9 @@ class ViewController: UIViewController {
     
     var users = [User]()
     var user = User()
+    var loadedData = [User]()
+    
+    //definiing Singleton for Database Manager
     let db = DatabaseManager.shared
     let UD = UserDefaults.standard
     
@@ -34,16 +37,19 @@ class ViewController: UIViewController {
         usersTable.delegate = self
         usersTable.dataSource = self
         searchBar.delegate = self
+        
         //register Custom XIB/NIB Cell for User Table
         usersTable.register(UINib(nibName: "UserViewCell", bundle: nil), forCellReuseIdentifier: "ReuseableUserNib")
-        
         self.setApiButton()
-        loadData()
         
+        //loadData()
+        db.DeleteAll(objectType: User.self)
+        self.UD.set(false, forKey: "loadedDB")
+        self.setApiButton()
     }
     
     @IBAction func CallAPI_clicked(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Call API to fetch data?", message: "this action will get data and save it Locally", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Call API to fetch data?", message: "this will get data and Store it Locally", preferredStyle: .alert)
         
         let action1 = UIAlertAction(title: "Yes", style: .default) { UIAlertAction in
             
@@ -58,6 +64,7 @@ class ViewController: UIViewController {
         
         alert.addAction(action2)
         alert.addAction(action1)
+        
         
         present(alert, animated: true)
     }
@@ -91,6 +98,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
    
         }
         
+        //UserManager Singleton
         UserManager.instance.getImageByUrl(urlString: users[indexPath.row].thumbnail!) { data in
           
             DispatchQueue.main.async {
@@ -106,21 +114,26 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
         return 140
     }
     
+    
+    //Responsible for Pagination
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if (indexPath.row == users.count - 1 && searchBar.text == ""){
-            print("last row")
+            print("at last row")
             
-            if self.rows < results {
-                self.rows = self.rows + 10
-                loadData(str: "", SortKey: "name", rows: self.rows)
+            if self.offset < results {
+                self.offset = self.offset + 10
+                loadData()
             }
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        //set sending user
         self.user = users[indexPath.row]
-        performSegue(withIdentifier: "ToUserDetails", sender: self)
+        
+        //To Details
+        performSegue(withIdentifier: "ToUserDetails", sender: indexPath)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -135,23 +148,52 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
 //Load Actions
 extension ViewController{
     
-    func loadData(str:String = "",SortKey:String = "name", rows:Int = 10)
+    func loadData()
     {
+        
         ProgressHUD.show()
-        if(str == "")
-        {
-            users = db.load(objectType: User.self, predicates: [],rows: rows,SortKey: SortKey)
+        
+        /*if there is temporary loaded data, append that to the users list instead
+         of calling DataBase request*/
+        if(!(loadedData.isEmpty)){
+            users.removeAll()
+            users.append(contentsOf: loadedData)
+            loadedData.removeAll()
         }
-        else
-        {
-            let predicate = NSPredicate(format: "name CONTAINS[cd] %@", str)
-            users = db.load(objectType: User.self, predicates: [predicate],rows: rows, SortKey: SortKey)
+        else{
+        users.append(contentsOf:db.load(objectType: User.self, predicates: [],rows: 10,offset: offset,SortKey: "name"))
         }
+        print(users.count)
         
         DispatchQueue.main.async {
             self.usersTable.reloadData()
         }
+        
         ProgressHUD.dismiss()
+        
+    }
+    
+    func loadData(searchString :String)
+    {
+        if(searchString == "")
+        {
+           loadData()
+        }
+        else
+        {
+            /*Save loaded data in a temporary array so that you dont have
+             to call Database request again*/
+            
+            loadedData = users
+            
+            //Search from whole list instead of loaded list
+            let predicate = NSPredicate(format: "name CONTAINS[cd] %@", searchString)
+            users = db.load(objectType: User.self, predicates: [predicate],rows: results,offset: 0, SortKey: "name")
+            
+            DispatchQueue.main.async {
+                self.usersTable.reloadData()
+            }
+        }
         
     }
     
@@ -171,12 +213,14 @@ extension ViewController{
     
 }
 
+//MARK :- Search Bar Delgate Methods
 
-extension ViewController : UISearchBarDelegate{
+extension ViewController : UISearchBarDelegate
+{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if(searchBar.text?.count == 0)
         {
-            loadData(str: "", SortKey: "name", rows: self.rows)
+            loadData()
         }
         else
         {
@@ -187,7 +231,7 @@ extension ViewController : UISearchBarDelegate{
                 present(alert, animated: true)
             }
             else{
-                loadData(str: searchBar.text!, SortKey: "name", rows: results)
+                loadData(searchString: searchBar.text!)
             }
         }
         
@@ -200,7 +244,7 @@ extension ViewController : UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchBar.text?.count == 0)
         {
-            loadData(str: "", SortKey: "name", rows: self.rows)
+            loadData()
             DispatchQueue.main.async {
                 searchBar.resignFirstResponder()
             }

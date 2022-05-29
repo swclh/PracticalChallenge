@@ -13,8 +13,13 @@ class DatabaseManager
 {
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    
+    
+    //Defining Singleton for Shared use
     static let shared = DatabaseManager()
     
+    
+    //Generic method to return a object to be added
     func add<T:NSManagedObject>(objectType: T.Type) -> T?{
         guard let entityName = T.entity().name else {return nil}
         guard let entity = NSEntityDescription.entity(forEntityName: entityName, in: context) else {
@@ -26,12 +31,14 @@ class DatabaseManager
         return object as? T
     }
     
-    func load<T:NSManagedObject>(objectType: T.Type, predicates:[NSPredicate], rows:Int, SortKey:String) -> [T] {
+    //Load data
+    func load<T:NSManagedObject>(objectType: T.Type, predicates:[NSPredicate], rows:Int, offset:Int = 10, SortKey:String) -> [T] {
         
         let request = T.fetchRequest()
         request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
         request.sortDescriptors = [NSSortDescriptor(key: SortKey,ascending: true)]
         request.fetchLimit = rows
+        request.fetchOffset = offset
         
         do {
             let result = try context.fetch(request)
@@ -44,12 +51,14 @@ class DatabaseManager
         return []
     }
     
+    //Delete a row
     func delete<T : NSManagedObject>(object: T)
     {
         context.delete(object)
         save()
     }
     
+    //Saving Context
     func save()
     {
         do{
@@ -60,6 +69,7 @@ class DatabaseManager
         }
     }
     
+    //Delete all the rows of an Entity
     func DeleteAll<T:NSManagedObject>(objectType : T.Type)
     {
         guard let entityName = T.entity().name else {return}

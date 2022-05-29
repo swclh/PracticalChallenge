@@ -16,7 +16,6 @@
 		5C4A433828404AA80081EA90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C4A433728404AA80081EA90 /* Assets.xcassets */; };
 		5C4A433B28404AA80081EA90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4A433928404AA80081EA90 /* LaunchScreen.storyboard */; };
 		5C4A434828406D490081EA90 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A434728406D490081EA90 /* UserManager.swift */; };
-		5C4A434A284070AC0081EA90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A4349284070AC0081EA90 /* User.swift */; };
 		5C4A434C2840791B0081EA90 /* userDataDecoderClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A434B2840791B0081EA90 /* userDataDecoderClass.swift */; };
 		5C4A43512840DA0A0081EA90 /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A434F2840DA0A0081EA90 /* UserViewCell.swift */; };
 		5C4A43522840DA0A0081EA90 /* UserViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4A43502840DA0A0081EA90 /* UserViewCell.xib */; };
@@ -36,7 +35,6 @@
 		5C4A433A28404AA80081EA90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C4A433C28404AA80081EA90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C4A434728406D490081EA90 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		5C4A4349284070AC0081EA90 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5C4A434B2840791B0081EA90 /* userDataDecoderClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDataDecoderClass.swift; sourceTree = "<group>"; };
 		5C4A434F2840DA0A0081EA90 /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
 		5C4A43502840DA0A0081EA90 /* UserViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewCell.xib; sourceTree = "<group>"; };
@@ -96,11 +94,11 @@
 		5C4A432A28404AA70081EA90 /* CeloTest1 */ = {
 			isa = PBXGroup;
 			children = (
-				5C4A434428406B630081EA90 /* Controllers */,
-				5C4A434328406B5B0081EA90 /* Views */,
 				5C4A434228406B530081EA90 /* Models */,
-				5C4A432B28404AA70081EA90 /* AppDelegate.swift */,
+				5C4A434328406B5B0081EA90 /* Views */,
+				5C4A434428406B630081EA90 /* Controllers */,
 				5C4A432D28404AA70081EA90 /* SceneDelegate.swift */,
+				5C4A432B28404AA70081EA90 /* AppDelegate.swift */,
 				5C4A433728404AA80081EA90 /* Assets.xcassets */,
 				5C4A433928404AA80081EA90 /* LaunchScreen.storyboard */,
 				5C4A433C28404AA80081EA90 /* Info.plist */,
@@ -112,8 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				5C4A433428404AA70081EA90 /* CeloTest1.xcdatamodeld */,
+				5C4A434F2840DA0A0081EA90 /* UserViewCell.swift */,
 				5C4A434728406D490081EA90 /* UserManager.swift */,
-				5C4A4349284070AC0081EA90 /* User.swift */,
 				5C4A434B2840791B0081EA90 /* userDataDecoderClass.swift */,
 				5C982B31284270FD0052F1FD /* DatabaseManager.swift */,
 			);
@@ -124,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				5C4A433128404AA70081EA90 /* Main.storyboard */,
-				5C4A434F2840DA0A0081EA90 /* UserViewCell.swift */,
 				5C4A43502840DA0A0081EA90 /* UserViewCell.xib */,
 			);
 			path = Views;
@@ -264,7 +261,6 @@
 				5C4A433628404AA70081EA90 /* CeloTest1.xcdatamodeld in Sources */,
 				5C4A43512840DA0A0081EA90 /* UserViewCell.swift in Sources */,
 				5C4A432E28404AA70081EA90 /* SceneDelegate.swift in Sources */,
-				5C4A434A284070AC0081EA90 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
