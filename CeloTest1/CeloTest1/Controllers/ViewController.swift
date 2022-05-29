@@ -6,8 +6,6 @@
 //
 
 import UIKit
-import ProgressHUD
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var usersTable: UITableView!
@@ -151,7 +149,6 @@ extension ViewController{
     func loadData()
     {
         
-        ProgressHUD.show()
         
         /*if there is temporary loaded data, append that to the users list instead
          of calling DataBase request*/
@@ -169,7 +166,6 @@ extension ViewController{
             self.usersTable.reloadData()
         }
         
-        ProgressHUD.dismiss()
         
     }
     
