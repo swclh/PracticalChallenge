@@ -40,10 +40,7 @@ class ViewController: UIViewController {
         usersTable.register(UINib(nibName: "UserViewCell", bundle: nil), forCellReuseIdentifier: "ReuseableUserNib")
         self.setApiButton()
         
-        //loadData()
-        db.DeleteAll(objectType: User.self)
-        self.UD.set(false, forKey: "loadedDB")
-        self.setApiButton()
+        loadData()
     }
     
     @IBAction func CallAPI_clicked(_ sender: UIButton) {
@@ -143,53 +140,35 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
 
 }
 
-//Load Actions
+//MARK :- Load Actions
+
 extension ViewController{
     
     func loadData()
     {
-        
-        
-        /*if there is temporary loaded data, append that to the users list instead
-         of calling DataBase request*/
-        if(!(loadedData.isEmpty)){
-            users.removeAll()
-            users.append(contentsOf: loadedData)
-            loadedData.removeAll()
-        }
-        else{
         users.append(contentsOf:db.load(objectType: User.self, predicates: [],rows: 10,offset: offset,SortKey: "name"))
-        }
-        print(users.count)
+        
+        print("users = \(users.count)")
+        print("offset \(offset)")
         
         DispatchQueue.main.async {
             self.usersTable.reloadData()
         }
         
-        
     }
     
     func loadData(searchString :String)
     {
-        if(searchString == "")
-        {
-           loadData()
-        }
-        else
-        {
-            /*Save loaded data in a temporary array so that you dont have
-             to call Database request again*/
-            
-            loadedData = users
-            
-            //Search from whole list instead of loaded list
             let predicate = NSPredicate(format: "name CONTAINS[cd] %@", searchString)
+        
+            users.removeAll()
+            
             users = db.load(objectType: User.self, predicates: [predicate],rows: results,offset: 0, SortKey: "name")
+            
             
             DispatchQueue.main.async {
                 self.usersTable.reloadData()
             }
-        }
         
     }
     
@@ -216,6 +195,8 @@ extension ViewController : UISearchBarDelegate
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if(searchBar.text?.count == 0)
         {
+            users.removeAll()
+            offset = 0
             loadData()
         }
         else
@@ -228,6 +209,7 @@ extension ViewController : UISearchBarDelegate
             }
             else{
                 loadData(searchString: searchBar.text!)
+                print("offset \(offset)")
             }
         }
         
@@ -240,10 +222,14 @@ extension ViewController : UISearchBarDelegate
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if(searchBar.text?.count == 0)
         {
+            users.removeAll()
+            offset = 0
             loadData()
+            
             DispatchQueue.main.async {
                 searchBar.resignFirstResponder()
             }
         }
     }
+    
 }

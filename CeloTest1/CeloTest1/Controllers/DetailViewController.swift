@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        profilePicture.layer.cornerRadius = (profilePicture.frame.size.width ) / 3
+        profilePicture.layer.cornerRadius = (profilePicture.frame.size.width ) / 5
         profilePicture.clipsToBounds = true
         profilePicture.layer.borderWidth = 25
         profilePicture.layer.borderColor = UIColor.white.cgColor
