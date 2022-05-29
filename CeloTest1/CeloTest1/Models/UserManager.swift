@@ -41,7 +41,7 @@ class UserManager{
     func ParseJSON(userData : Data)
     {
         let decoder = JSONDecoder()
-        
+    
         do{
             let decodedData = try decoder.decode(userDataDecoderClass.self, from: userData)
             
@@ -115,6 +115,7 @@ class UserManager{
 }
 
 // MARK :- String Extension
+
 extension String {
 
     func toDate(withFormat format: String = "yyyy-MM-dd")-> Date?{

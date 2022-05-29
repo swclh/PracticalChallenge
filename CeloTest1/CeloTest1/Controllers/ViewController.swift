@@ -20,11 +20,13 @@ class ViewController: UIViewController {
         }
     }
     
+    //Loaded users will be stored in this array
     var users = [User]()
-    var user = User()
-    var loadedData = [User]()
     
-    //definiing Singleton for Database Manager
+    //user that will be sent to the Detail Page
+    var user = User()
+    
+    //definiing Singleton for Database Manager and User Defaults
     let db = DatabaseManager.shared
     let UD = UserDefaults.standard
     
@@ -44,6 +46,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func CallAPI_clicked(_ sender: UIButton) {
+        
+        //Alert for Calling API confimation
         let alert = UIAlertController(title: "Call API to fetch data?", message: "this will get data and Store it Locally", preferredStyle: .alert)
         
         let action1 = UIAlertAction(title: "Yes", style: .default) { UIAlertAction in
@@ -51,6 +55,8 @@ class ViewController: UIViewController {
             //Calling Data through API
             UserManager.instance.performRequest(urlString: self.baseUrl) {
                 self.loadData()
+                
+                //set that data is loaded
                 self.UD.set(true, forKey: "loadedDB")
                 self.setApiButton()
             }
@@ -68,7 +74,7 @@ class ViewController: UIViewController {
         
 }
 
-// MARK:- Table View Delegate Methods
+// MARK:- Extension for Table View Delegate Methods
 
 extension ViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,7 +99,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
    
         }
         
-        //UserManager Singleton
+        //UserManager Singleton being used
         UserManager.instance.getImageByUrl(urlString: users[indexPath.row].thumbnail!) { data in
           
             DispatchQueue.main.async {
@@ -112,6 +118,8 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
     
     //Responsible for Pagination
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        //checks if its last row
         if (indexPath.row == users.count - 1 && searchBar.text == ""){
             print("at last row")
             
@@ -140,7 +148,7 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
 
 }
 
-//MARK :- Load Actions
+//MARK :- Extension for Load Actions
 
 extension ViewController{
     
@@ -188,7 +196,7 @@ extension ViewController{
     
 }
 
-//MARK :- Search Bar Delgate Methods
+//MARK :- Extension for Search Bar Delgate Methods
 
 extension ViewController : UISearchBarDelegate
 {
@@ -202,12 +210,15 @@ extension ViewController : UISearchBarDelegate
         else
         {
             if(searchBar.text!.count < 2){
+                
+                //Validating that search field should ask for atleast 2 Characters
                 let alert = UIAlertController(title: "Validation", message: "you need to provide atleast two characters", preferredStyle: .alert)
                 let action = UIAlertAction(title: "Ok", style: .cancel)
                 alert.addAction(action)
                 present(alert, animated: true)
             }
             else{
+                
                 loadData(searchString: searchBar.text!)
                 print("offset \(offset)")
             }
@@ -220,6 +231,8 @@ extension ViewController : UISearchBarDelegate
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        //if there is no text, hide the keyboard
         if(searchBar.text?.count == 0)
         {
             users.removeAll()

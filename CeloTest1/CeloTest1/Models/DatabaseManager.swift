@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 import CoreData
 
+
 class DatabaseManager
 {
+    //getting Core Data context
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    
     
     //Defining Singleton for Shared use
     static let shared = DatabaseManager()

@@ -19,8 +19,20 @@
 		5C4A43512840DA0A0081EA90 /* UserViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A434F2840DA0A0081EA90 /* UserViewCell.swift */; };
 		5C4A43522840DA0A0081EA90 /* UserViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4A43502840DA0A0081EA90 /* UserViewCell.xib */; };
 		5C4A4354284133490081EA90 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A4353284133490081EA90 /* DetailViewController.swift */; };
+		5C9757D1284372C00048FA89 /* CeloTest1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9757D0284372C00048FA89 /* CeloTest1Tests.swift */; };
+		5C9757D8284375000048FA89 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9757D7284375000048FA89 /* UserData.swift */; };
 		5C982B32284270FD0052F1FD /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C982B31284270FD0052F1FD /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5C9757D2284372C00048FA89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C4A432028404AA60081EA90 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C4A432728404AA70081EA90;
+			remoteInfo = CeloTest1;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5C4A432828404AA70081EA90 /* CeloTest1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CeloTest1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,11 +49,21 @@
 		5C4A434F2840DA0A0081EA90 /* UserViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewCell.swift; sourceTree = "<group>"; };
 		5C4A43502840DA0A0081EA90 /* UserViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserViewCell.xib; sourceTree = "<group>"; };
 		5C4A4353284133490081EA90 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5C9757CE284372C00048FA89 /* CeloTest1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CeloTest1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C9757D0284372C00048FA89 /* CeloTest1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeloTest1Tests.swift; sourceTree = "<group>"; };
+		5C9757D7284375000048FA89 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		5C982B31284270FD0052F1FD /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5C4A432528404AA70081EA90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C9757CB284372C00048FA89 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -55,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				5C4A432A28404AA70081EA90 /* CeloTest1 */,
+				5C9757CF284372C00048FA89 /* CeloTest1Tests */,
 				5C4A432928404AA70081EA90 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				5C4A432828404AA70081EA90 /* CeloTest1.app */,
+				5C9757CE284372C00048FA89 /* CeloTest1Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,6 +136,15 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		5C9757CF284372C00048FA89 /* CeloTest1Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5C9757D0284372C00048FA89 /* CeloTest1Tests.swift */,
+				5C9757D7284375000048FA89 /* UserData.swift */,
+			);
+			path = CeloTest1Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +165,24 @@
 			productReference = 5C4A432828404AA70081EA90 /* CeloTest1.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5C9757CD284372C00048FA89 /* CeloTest1Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C9757D6284372C00048FA89 /* Build configuration list for PBXNativeTarget "CeloTest1Tests" */;
+			buildPhases = (
+				5C9757CA284372C00048FA89 /* Sources */,
+				5C9757CB284372C00048FA89 /* Frameworks */,
+				5C9757CC284372C00048FA89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C9757D3284372C00048FA89 /* PBXTargetDependency */,
+			);
+			name = CeloTest1Tests;
+			productName = CeloTest1Tests;
+			productReference = 5C9757CE284372C00048FA89 /* CeloTest1Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -144,6 +195,10 @@
 				TargetAttributes = {
 					5C4A432728404AA70081EA90 = {
 						CreatedOnToolsVersion = 13.4;
+					};
+					5C9757CD284372C00048FA89 = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 5C4A432728404AA70081EA90;
 					};
 				};
 			};
@@ -161,6 +216,7 @@
 			projectRoot = "";
 			targets = (
 				5C4A432728404AA70081EA90 /* CeloTest1 */,
+				5C9757CD284372C00048FA89 /* CeloTest1Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -174,6 +230,13 @@
 				5C4A433828404AA80081EA90 /* Assets.xcassets in Resources */,
 				5C4A433328404AA70081EA90 /* Main.storyboard in Resources */,
 				5C4A43522840DA0A0081EA90 /* UserViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C9757CC284372C00048FA89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,7 +259,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5C9757CA284372C00048FA89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C9757D8284375000048FA89 /* UserData.swift in Sources */,
+				5C9757D1284372C00048FA89 /* CeloTest1Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5C9757D3284372C00048FA89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C4A432728404AA70081EA90 /* CeloTest1 */;
+			targetProxy = 5C9757D2284372C00048FA89 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5C4A433128404AA70081EA90 /* Main.storyboard */ = {
@@ -390,6 +470,44 @@
 			};
 			name = Release;
 		};
+		5C9757D4284372C00048FA89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZGTSYD7NB6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CeloTest1Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CeloTest1.app/CeloTest1";
+			};
+			name = Debug;
+		};
+		5C9757D5284372C00048FA89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZGTSYD7NB6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CeloTest1Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CeloTest1.app/CeloTest1";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -407,6 +525,15 @@
 			buildConfigurations = (
 				5C4A434028404AA80081EA90 /* Debug */,
 				5C4A434128404AA80081EA90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C9757D6284372C00048FA89 /* Build configuration list for PBXNativeTarget "CeloTest1Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C9757D4284372C00048FA89 /* Debug */,
+				5C9757D5284372C00048FA89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
