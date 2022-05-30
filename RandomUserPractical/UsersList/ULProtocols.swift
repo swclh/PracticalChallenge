@@ -49,9 +49,6 @@ protocol ULViewToPresenterProtocol: AnyObject {
     func viewWillAppear()
     
     func searchBeginWithText(text: String)
-    
-    func searchEnds()
-
 }
 
 protocol ULInteractorToPresenterProtocol: AnyObject {

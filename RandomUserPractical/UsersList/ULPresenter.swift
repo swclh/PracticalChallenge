@@ -26,15 +26,15 @@ class ULPresenter: ULViewToPresenterProtocol {
     }
     
     func numberOfRows(section: Int) -> Int {
-        return self.data?.results.count ?? 0
+        return getUsersFromFilter(users: self.data?.results)?.count ?? 0
     }
     
     func content(at indexPath: IndexPath, cell: ULTableViewCell) {
-        cell.configure(usr: self.data?.results[indexPath.row] ?? nil)
+        cell.configure(usr: getUsersFromFilter(users: self.data!.results)?[indexPath.row])
     }
     
     func didSelectRow(at indexPath: IndexPath) {
-        guard let userData = self.data?.results[indexPath.row] else {
+        guard let userData = getUsersFromFilter(users: self.data?.results)?[indexPath.row] else {
             return
         }
         
@@ -64,12 +64,9 @@ class ULPresenter: ULViewToPresenterProtocol {
     
     func searchBeginWithText(text: String) {
         searchString = text
-        
+        self.view?.reloadRows()
     }
     
-    func searchEnds() {
-        searchString = nil
-    }
 }
 extension ULPresenter: ULInteractorToPresenterProtocol {
     func getUsersFromApiWithSuccess(response: ULEntity) {
@@ -77,20 +74,16 @@ extension ULPresenter: ULInteractorToPresenterProtocol {
             self.loadMoreUsers = false
         }
         
-        var offset: Int = 0
+//        var offset: Int = 0
         
         if let _ = self.data {
-            offset = self.data?.results.count ?? 0
             self.data?.results.append(contentsOf: response.results)
             self.data?.info = response.info
         } else {
             self.data = response
             self.view?.finishLoading()
         }
-        
-        let indexPaths = getUsersFromFilter(users: response.results).enumerated().map({ return IndexPath(row: offset + $0.offset, section: 0) })
-        self.view?.insertRows(at: indexPaths)
-        
+        self.view?.reloadRows()
         
         self.interactor?.storeUserEntities(entities: self.data)
     }
@@ -106,17 +99,19 @@ extension ULPresenter: ULInteractorToPresenterProtocol {
         self.loadMoreUsers = false
         
         self.view?.finishLoading()
-        let indexPaths = getUsersFromFilter(users: response.results).enumerated().map({ return IndexPath(row: $0.offset, section: 0) })
-        self.view?.insertRows(at: indexPaths)
+        self.view?.reloadRows()
     }
     
     func getUsersFromStorageWithError(error: String) {
         self.view?.showError(error: error)
     }
     
-    func getUsersFromFilter (users: [User]) -> [User] {
-        if let stringToSearch = searchString {
-            return users.filter{ ($0.name.first?.contains(stringToSearch) ?? false) || ($0.name.last?.contains(stringToSearch) ?? false)}
+    func getUsersFromFilter (users: [User]?) -> [User]? {
+        guard let stringToSearch = searchString else {
+            return users
+        }
+        if !stringToSearch.isEmpty {
+            return users?.filter{ ($0.name.first?.contains(stringToSearch) ?? false) || ($0.name.last?.contains(stringToSearch) ?? false)}
         }
         
         return users

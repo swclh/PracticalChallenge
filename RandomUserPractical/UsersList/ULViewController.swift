@@ -61,10 +61,6 @@ class ULViewController: UIViewController {
 extension ULViewController: UISearchBarDelegate {
     //MARK: UISearchbar delegate
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.presenter?.searchEnds()
-    }
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.presenter?.searchBeginWithText(text: searchText)
     }
