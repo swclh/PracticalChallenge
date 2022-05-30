@@ -1,0 +1,6 @@
+framework module Pods_RandomUserPractical_RandomUserPracticalUITests {
+  umbrella header "Pods-RandomUserPractical-RandomUserPracticalUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

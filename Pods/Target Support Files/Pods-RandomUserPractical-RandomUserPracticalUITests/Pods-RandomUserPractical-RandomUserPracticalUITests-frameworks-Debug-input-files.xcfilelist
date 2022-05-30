@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-RandomUserPractical-RandomUserPracticalUITests/Pods-RandomUserPractical-RandomUserPracticalUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Disk/Disk.framework
+${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
