@@ -12,6 +12,9 @@
 		55F5B4BB28FF93F500061DA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F5B4BA28FF93F500061DA5 /* ViewController.swift */; };
 		55F5B4C028FF93F900061DA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F5B4BF28FF93F900061DA5 /* Assets.xcassets */; };
 		55F5B4C328FF93F900061DA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F5B4C128FF93F900061DA5 /* LaunchScreen.storyboard */; };
+		55F5B4CE28FFA76E00061DA5 /* RandomUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F5B4CD28FFA76E00061DA5 /* RandomUserAPI.swift */; };
+		55F5B4D02903557200061DA5 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F5B4CF2903557200061DA5 /* UserStore.swift */; };
+		55F5B4D22903567A00061DA5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F5B4D12903567A00061DA5 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		55F5B4BF28FF93F900061DA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55F5B4C228FF93F900061DA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55F5B4C428FF93F900061DA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55F5B4CD28FFA76E00061DA5 /* RandomUserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserAPI.swift; sourceTree = "<group>"; };
+		55F5B4CF2903557200061DA5 /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		55F5B4D12903567A00061DA5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 		55F5B4B528FF93F500061DA5 /* Practical Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				55F5B4CA28FFA6E300061DA5 /* User */,
 				55F5B4B628FF93F500061DA5 /* AppDelegate.swift */,
 				55F5B4B828FF93F500061DA5 /* SceneDelegate.swift */,
 				55F5B4BA28FF93F500061DA5 /* ViewController.swift */,
@@ -62,6 +69,16 @@
 				55F5B4C428FF93F900061DA5 /* Info.plist */,
 			);
 			path = "Practical Challenge";
+			sourceTree = "<group>";
+		};
+		55F5B4CA28FFA6E300061DA5 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				55F5B4CD28FFA76E00061DA5 /* RandomUserAPI.swift */,
+				55F5B4CF2903557200061DA5 /* UserStore.swift */,
+				55F5B4D12903567A00061DA5 /* User.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +151,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F5B4CE28FFA76E00061DA5 /* RandomUserAPI.swift in Sources */,
+				55F5B4D02903557200061DA5 /* UserStore.swift in Sources */,
+				55F5B4D22903567A00061DA5 /* User.swift in Sources */,
 				55F5B4BB28FF93F500061DA5 /* ViewController.swift in Sources */,
 				55F5B4B728FF93F500061DA5 /* AppDelegate.swift in Sources */,
 				55F5B4B928FF93F500061DA5 /* SceneDelegate.swift in Sources */,
