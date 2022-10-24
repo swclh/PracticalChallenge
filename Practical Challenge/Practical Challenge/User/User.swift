@@ -10,11 +10,23 @@ import UIKit
 struct User: Codable {
     let gender: String
     let dob: DateOfBirth
-    let picture: Dictionary<String, URL>
-    var name: Dictionary<String, String>
+    let picture: Pictures
+    var name: Name
     
     struct DateOfBirth: Codable {
         var date: String
         var age: Int
+    }
+    
+    struct Name: Codable {
+        var title: String
+        var last: String
+        var first: String
+    }
+    
+    struct Pictures: Codable {
+        var thumbnail: URL
+        var large: URL
+        var medium: URL
     }
 }

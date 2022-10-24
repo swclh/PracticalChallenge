@@ -16,11 +16,22 @@ enum RandomUserAPI {
     
     // Have a func for each URL option for future proofing new features
     static func baseUserUrl() -> URL? {
-        return randomUserURL(endPoint: .baseURLString)
+        return randomUserURL(endPoint: .baseURLString, parameters: [
+            "results" : "20"
+        ])
     }
     
-    private static func randomUserURL(endPoint: EndPoint) -> URL? {
+    private static func randomUserURL(endPoint: EndPoint, parameters: [String: String]?) -> URL? {
         var components = URLComponents(string: endPoint.rawValue)!
+        var queryItems = [URLQueryItem]()
+        
+        if let additionalParams = parameters{
+            for (key, value) in additionalParams {
+                let item = URLQueryItem(name: key, value: value)
+                queryItems.append(item)
+            }
+        }
+        components.queryItems = queryItems
         return components.url
     }
 }

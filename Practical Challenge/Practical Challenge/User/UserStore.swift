@@ -33,6 +33,7 @@ final class UserStore {
         return URLSession(configuration: config)
     }()
     
+    // MARK: - User fetch and process
     // Called fro the view controller, carried out API request
     func fetchUsers(completion: @escaping (Result<[User], Error>) -> Void){
         
@@ -43,7 +44,7 @@ final class UserStore {
             }
             return
         }
-        
+
         // Make the request
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request) {
@@ -56,14 +57,14 @@ final class UserStore {
                 }
                 return
             }
-            guard let jsonData = data else {
+            guard let jsonData = data else{
                 OperationQueue.main.addOperation {
                     completion(.failure(UserAPIError.noUsersFetched))
                 }
                 return
             }
-            
-            // If there are no errors
+
+            // If no errors and data exists process the data
             let result = self.processUsers(fromJson: jsonData)
             OperationQueue.main.addOperation {
                 completion(result)
@@ -72,13 +73,11 @@ final class UserStore {
         task.resume()
     }
     
-    
     private func processUsers(fromJson data: Data) -> Result<[User], Error> {
         do {
             let decoder = JSONDecoder()
             
             let userResponse = try decoder.decode(UserResponse.self, from: data)
-            
             return .success(userResponse.users)
         } catch {
             return .failure(error)
