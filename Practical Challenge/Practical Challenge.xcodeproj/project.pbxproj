@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		557E54882904D2490012D6BF /* UserTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557E54872904D2490012D6BF /* UserTableCell.swift */; };
-		557E548C2904F22E0012D6BF /* CellLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557E548B2904F22E0012D6BF /* CellLabel.swift */; };
+		557E548C2904F22E0012D6BF /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557E548B2904F22E0012D6BF /* Label.swift */; };
 		557E548E290618870012D6BF /* UserPhotoFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557E548D290618870012D6BF /* UserPhotoFetch.swift */; };
+		557E549029066AD70012D6BF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557E548F29066AD70012D6BF /* DetailViewController.swift */; };
+		557E5492290673620012D6BF /* UserHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557E5491290673620012D6BF /* UserHelpers.swift */; };
 		55F5B4B728FF93F500061DA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F5B4B628FF93F500061DA5 /* AppDelegate.swift */; };
 		55F5B4B928FF93F500061DA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F5B4B828FF93F500061DA5 /* SceneDelegate.swift */; };
 		55F5B4BB28FF93F500061DA5 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F5B4BA28FF93F500061DA5 /* UserViewController.swift */; };
@@ -22,8 +24,10 @@
 
 /* Begin PBXFileReference section */
 		557E54872904D2490012D6BF /* UserTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableCell.swift; sourceTree = "<group>"; };
-		557E548B2904F22E0012D6BF /* CellLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellLabel.swift; sourceTree = "<group>"; };
+		557E548B2904F22E0012D6BF /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		557E548D290618870012D6BF /* UserPhotoFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoFetch.swift; sourceTree = "<group>"; };
+		557E548F29066AD70012D6BF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		557E5491290673620012D6BF /* UserHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHelpers.swift; sourceTree = "<group>"; };
 		55F5B4B328FF93F500061DA5 /* Practical Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Practical Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F5B4B628FF93F500061DA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55F5B4B828FF93F500061DA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				557E54872904D2490012D6BF /* UserTableCell.swift */,
-				557E548B2904F22E0012D6BF /* CellLabel.swift */,
 			);
 			path = UserTable;
 			sourceTree = "<group>";
@@ -79,7 +82,9 @@
 				55F5B4CA28FFA6E300061DA5 /* User */,
 				55F5B4B628FF93F500061DA5 /* AppDelegate.swift */,
 				55F5B4B828FF93F500061DA5 /* SceneDelegate.swift */,
+				557E548B2904F22E0012D6BF /* Label.swift */,
 				55F5B4BA28FF93F500061DA5 /* UserViewController.swift */,
+				557E548F29066AD70012D6BF /* DetailViewController.swift */,
 				55F5B4BF28FF93F900061DA5 /* Assets.xcassets */,
 				55F5B4C128FF93F900061DA5 /* LaunchScreen.storyboard */,
 				55F5B4C428FF93F900061DA5 /* Info.plist */,
@@ -94,6 +99,7 @@
 				55F5B4CF2903557200061DA5 /* UserStore.swift */,
 				55F5B4D12903567A00061DA5 /* User.swift */,
 				557E548D290618870012D6BF /* UserPhotoFetch.swift */,
+				557E5491290673620012D6BF /* UserHelpers.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -170,11 +176,13 @@
 			files = (
 				557E54882904D2490012D6BF /* UserTableCell.swift in Sources */,
 				55F5B4CE28FFA76E00061DA5 /* RandomUserAPI.swift in Sources */,
-				557E548C2904F22E0012D6BF /* CellLabel.swift in Sources */,
+				557E548C2904F22E0012D6BF /* Label.swift in Sources */,
 				557E548E290618870012D6BF /* UserPhotoFetch.swift in Sources */,
 				55F5B4D02903557200061DA5 /* UserStore.swift in Sources */,
 				55F5B4D22903567A00061DA5 /* User.swift in Sources */,
 				55F5B4BB28FF93F500061DA5 /* UserViewController.swift in Sources */,
+				557E549029066AD70012D6BF /* DetailViewController.swift in Sources */,
+				557E5492290673620012D6BF /* UserHelpers.swift in Sources */,
 				55F5B4B728FF93F500061DA5 /* AppDelegate.swift in Sources */,
 				55F5B4B928FF93F500061DA5 /* SceneDelegate.swift in Sources */,
 			);

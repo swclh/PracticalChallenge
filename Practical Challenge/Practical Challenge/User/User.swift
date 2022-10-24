@@ -9,6 +9,9 @@ import UIKit
 
 struct User: Codable {
     let gender: String
+    let email: String
+    let phone: String
+    let cell: String
     let dob: DateOfBirth
     let picture: Pictures
     var name: Name

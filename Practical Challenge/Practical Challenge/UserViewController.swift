@@ -14,6 +14,7 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func loadView() {
         view = UIView()
+
         // MARK: - Table View
         userTableView.dataSource = self
         userTableView.delegate = self
@@ -52,6 +53,12 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.setImage(photos: userInfo.picture)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailController = DetailViewController(user: userStore.users[indexPath.row])
+        detailController.modalPresentationStyle = .formSheet
+        present(detailController, animated: true)
     }
     
     private func fetchNewUsers(){

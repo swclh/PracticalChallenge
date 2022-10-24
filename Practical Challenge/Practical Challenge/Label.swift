@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CellLabel: UILabel {
+class Label: UILabel {
     
     // This class should be used in place of UILabel for the UserTableView cells, to avoid code duplication
     override init(frame: CGRect) {

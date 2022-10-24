@@ -10,11 +10,11 @@ import UIKit
 class UserTableCell: UITableViewCell {
     
     private let userPhotoFetch = UserPhotoFetch()
+    private let userHelpers = UserHelpers()
     
-    let dateFormatter = DateFormatter()
-    private let userNameLabel = CellLabel()
-    private let genderLabel = CellLabel()
-    private let dobLabel = CellLabel()
+    private let userNameLabel = Label()
+    private let genderLabel = Label()
+    private let dobLabel = Label()
     private var thumbnailImage = UIImageView()
     private let loadingIndicator = UIActivityIndicatorView()
     
@@ -52,22 +52,15 @@ class UserTableCell: UITableViewCell {
     }
     
     func setUserName(userName: User.Name) {
-        let userNameFormatted = "\(userName.title) \(userName.first) \(userName.last)"
-        userNameLabel.text = "Name: \(userNameFormatted)"
+        userNameLabel.text = userHelpers.formatUserName(userName: userName)
     }
     
     func setGenderLabel(gender: String) {
-        genderLabel.text = "Gender: \(gender.uppercased())"
+        genderLabel.text = userHelpers.formatGender(gender: gender)
     }
     
     func setDobLabel(dob: User.DateOfBirth) {
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        let formattedDate = dateFormatter.date(from: dob.date)
-        if let unwrappedDate = formattedDate {
-            dobLabel.text = "DOB: \(unwrappedDate.formatted(date: .numeric, time: .omitted))"
-        } else {
-            dobLabel.text = "DOB: \(dob.date)"
-        }
+        dobLabel.text = userHelpers.formatDOB(dob: dob)
     }
     
     func setImage(photos: User.Pictures) {
