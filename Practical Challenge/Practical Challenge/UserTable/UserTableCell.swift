@@ -21,6 +21,8 @@ class UserTableCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        //separatorInset.left = 20.0
+        
         thumbnailImage.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(thumbnailImage)
         
@@ -37,11 +39,11 @@ class UserTableCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             thumbnailImage.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10),
-            thumbnailImage.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16),
-            thumbnailImage.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant:  -10),
+            thumbnailImage.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            thumbnailImage.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor, constant:  -8),
             
-            labelStack.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10),
-            labelStack.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -10),
+            labelStack.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 8),
+            labelStack.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -8),
             labelStack.leadingAnchor.constraint(equalTo: thumbnailImage.trailingAnchor, constant: 16),
             labelStack.trailingAnchor.constraint(lessThanOrEqualTo: self.contentView.trailingAnchor, constant: -16)
         ])
@@ -52,20 +54,21 @@ class UserTableCell: UITableViewCell {
     }
     
     func setUserName(userName: User.Name) {
-        userNameLabel.text = userHelpers.formatUserName(userName: userName)
+        userNameLabel.attributedText = userHelpers.formatBasicInfo(infoType: "Name: ", info: "\(userName.title) \(userName.first) \(userName.last)")
     }
     
     func setGenderLabel(gender: String) {
-        genderLabel.text = userHelpers.formatGender(gender: gender)
+        genderLabel.attributedText = userHelpers.formatBasicInfo(infoType: "Gender: ", info: "\(gender.uppercased())")
     }
     
     func setDobLabel(dob: User.DateOfBirth) {
-        dobLabel.text = userHelpers.formatDOB(dob: dob)
+        dobLabel.attributedText = userHelpers.formatDOB(dob: dob)
     }
     
     func setImage(photos: User.Pictures) {
         // User Medium image size as they are better quality than the thumbnail
-        userPhotoFetch.fetchPhoto(photoURL: photos.medium) {
+        userPhotoFetch.fetchPhoto(photoURL: photos.medium
+        ) {
             (photoResult) in
             switch photoResult {
             case let .success(photo):

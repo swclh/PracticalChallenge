@@ -13,6 +13,7 @@ class DetailViewController: UIViewController {
     let userHelpers = UserHelpers()
     let userPhotoFetch = UserPhotoFetch()
     
+    private let titleLabel = Label()
     private let nameLabel = Label()
     private let dobLabel = Label()
     private let ageLabel = Label()
@@ -37,36 +38,39 @@ class DetailViewController: UIViewController {
         
         if let presentationController = presentationController as? UISheetPresentationController {
             presentationController.detents = [.medium()]
+            presentationController.prefersGrabberVisible = true
         }
+
+        titleLabel.attributedText = userHelpers.formatBasicInfo(infoType: "Title: ", info: "\(user.name.title)")
+        nameLabel.attributedText = userHelpers.formatBasicInfo(infoType: "Name: ", info: "\(user.name.first) \(user.name.last)")
+        dobLabel.attributedText = userHelpers.formatDOB(dob: user.dob)
         
-        nameLabel.text = userHelpers.formatUserName(userName: user.name)
-        dobLabel.text = userHelpers.formatDOB(dob: user.dob)
-        ageLabel.text = "Age: \(user.dob.age)"
-        emailLabel.text = "Email: \(user.email)"
-        phoneLabel.text = "Phone Number: \(user.phone)"
-        cellLabel.text = "Cell Phone: \(user.cell)"
+        ageLabel.attributedText = userHelpers.formatBasicInfo(infoType: "Age: ", info: "\(user.dob.age)")
+        emailLabel.attributedText = userHelpers.formatBasicInfo(infoType: "Email: ", info: "\(user.email)")
+        phoneLabel.attributedText = userHelpers.formatBasicInfo(infoType: "Phone Number: ", info: "\(user.phone)")
+        cellLabel.attributedText = userHelpers.formatBasicInfo(infoType: "Cellphone: ", info: "\(user.cell)")
         
         getPhoto()
         photoImage.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(photoImage)
         
-        let detailStack = UIStackView(arrangedSubviews: [nameLabel, ageLabel, dobLabel, emailLabel, phoneLabel, cellLabel])
+        let detailStack = UIStackView(arrangedSubviews: [titleLabel, nameLabel, ageLabel, dobLabel, emailLabel, phoneLabel, cellLabel])
         detailStack.axis = .vertical
-        detailStack.spacing = 5
+        detailStack.spacing = 10
         detailStack.distribution = .fillEqually
         detailStack.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(detailStack)
         
         
         NSLayoutConstraint.activate([
-            photoImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            photoImage.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
-            photoImage.trailingAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15),
+            photoImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
+            photoImage.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            photoImage.trailingAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             
-            detailStack.topAnchor.constraint(equalTo: photoImage.safeAreaLayoutGuide.bottomAnchor, constant: 10),
-            detailStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
-            detailStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15),
-            detailStack.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15)
+            detailStack.topAnchor.constraint(equalTo: photoImage.safeAreaLayoutGuide.bottomAnchor, constant: 16),
+            detailStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            detailStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            detailStack.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     

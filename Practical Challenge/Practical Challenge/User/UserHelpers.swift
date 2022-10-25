@@ -12,22 +12,25 @@ struct UserHelpers {
     private let dateFormatter = DateFormatter()
     private let userPhotoFetch = UserPhotoFetch()
     
-    func formatUserName(userName: User.Name) -> String {
-        let userNameFormatted = "\(userName.title) \(userName.first) \(userName.last)"
-        return "Name: \(userNameFormatted)"
+    func formatBasicInfo(infoType: String, info: String) -> NSAttributedString {
+        let infoString = NSAttributedString(string: info)
+        let boldAtrribute = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 16)]
+        let returnString = NSMutableAttributedString(string: infoType, attributes: boldAtrribute)
+        returnString.append(infoString)
+        return returnString
     }
     
-    func formatGender(gender: String) -> String {
-        return "Gender: \(gender.uppercased())"
-    }
-    
-    func formatDOB(dob: User.DateOfBirth) -> String {
+    func formatDOB(dob: User.DateOfBirth) -> NSAttributedString {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        var date = NSAttributedString(string: "\(dob.date)")
         let formattedDate = dateFormatter.date(from: dob.date)
         if let unwrappedDate = formattedDate {
-            return "DOB: \(unwrappedDate.formatted(date: .numeric, time: .omitted))"
-        } else {
-            return "DOB: \(dob.date)"
+            date = NSAttributedString(string: "\(unwrappedDate.formatted(date: .numeric, time: .omitted))")
         }
+        
+        let boldAtrribute = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 16)]
+        let returnString = NSMutableAttributedString(string: "DOB: ", attributes: boldAtrribute)
+        returnString.append(date)
+        return returnString
     }
 }

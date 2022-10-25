@@ -14,11 +14,12 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func loadView() {
         view = UIView()
-
+        navigationItem.title = "Users"
+        
         // MARK: - Table View
         userTableView.dataSource = self
         userTableView.delegate = self
-        userTableView.estimatedRowHeight = 32
+        userTableView.estimatedRowHeight = 16
         userTableView.register(UserTableCell.self, forCellReuseIdentifier: "UserTableCell")
         userTableView.rowHeight = UITableView.automaticDimension
         userTableView.translatesAutoresizingMaskIntoConstraints = false
@@ -26,9 +27,9 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // MARK: - Constraints
         NSLayoutConstraint.activate([
-            userTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            userTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            userTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            userTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
+            userTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            userTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             userTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }

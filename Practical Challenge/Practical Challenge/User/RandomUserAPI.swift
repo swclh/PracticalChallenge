@@ -17,7 +17,7 @@ enum RandomUserAPI {
     // Have a func for each URL option for future proofing new features
     static func baseUserUrl() -> URL? {
         return randomUserURL(endPoint: .baseURLString, parameters: [
-            "results" : "20"
+            "results" : "100"
         ])
     }
     
