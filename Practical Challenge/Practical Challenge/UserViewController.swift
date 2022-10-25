@@ -22,6 +22,11 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         userTableView.estimatedRowHeight = 16
         userTableView.register(UserTableCell.self, forCellReuseIdentifier: "UserTableCell")
         userTableView.rowHeight = UITableView.automaticDimension
+        
+        userTableView.refreshControl = UIRefreshControl()
+        userTableView.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        userTableView.refreshControl?.addTarget(self, action: #selector(fetchNewUsers), for: .valueChanged)
+        
         userTableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(userTableView)
         
@@ -62,13 +67,14 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         present(detailController, animated: true)
     }
     
-    private func fetchNewUsers(){
+    @objc private func fetchNewUsers(){
         userStore.fetchUsers() {
             userResult in
             switch userResult {
             case let .success(user):
                 self.userStore.users = user
                 self.userTableView.reloadData()
+                self.userTableView.refreshControl?.endRefreshing()
             
             case let .failure(error):
                 print("Error fetching users: \(error)")
