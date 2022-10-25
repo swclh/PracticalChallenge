@@ -7,10 +7,12 @@
 
 import UIKit
 
-class UserViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class UserViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
 
     var userStore = UserStore()
     var userTableView = UITableView()
+    var currentTablePage = 1
+    var isPaginating = false
     
     override func loadView() {
         view = UIView()
@@ -42,7 +44,7 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        fetchNewUsers()
+        fetchNewUsers(pagination: false)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,14 +69,39 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         present(detailController, animated: true)
     }
     
-    @objc private func fetchNewUsers(){
-        userStore.fetchUsers() {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard isPaginating else {
+            let position = scrollView.contentOffset.y
+            if position > (userTableView.contentSize.height-100-scrollView.frame.size.height) {
+                currentTablePage += 1
+                fetchNewUsers(pagination: true, currentPage: currentTablePage)
+            }
+            return
+        }
+    }
+    
+    // Fetch new users for the usertable, either a new set or additional users
+    @objc private func fetchNewUsers(pagination: Bool, currentPage: Int = 1){
+        if pagination {
+            isPaginating = true
+        }
+        userStore.fetchUsers(pagination: pagination, currentPage: currentPage) {
             userResult in
             switch userResult {
             case let .success(user):
-                self.userStore.users = user
-                self.userTableView.reloadData()
-                self.userTableView.refreshControl?.endRefreshing()
+                // If pagination append to users rather than overwriting
+                if pagination {
+                    self.userStore.users.append(contentsOf: user)
+                    DispatchQueue.main.async {
+                        self.userTableView.reloadData()
+                    }
+                    self.isPaginating = false
+                } else {
+                    self.currentTablePage = 1
+                    self.userStore.users = user
+                    self.userTableView.reloadData()
+                    self.userTableView.refreshControl?.endRefreshing()
+                }
             
             case let .failure(error):
                 print("Error fetching users: \(error)")

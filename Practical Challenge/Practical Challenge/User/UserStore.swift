@@ -35,10 +35,18 @@ final class UserStore {
     
     // MARK: - User fetch and process
     // Called fro the view controller, carried out API request
-    func fetchUsers(completion: @escaping (Result<[User], Error>) -> Void){
+    func fetchUsers(pagination: Bool, currentPage: Int, completion: @escaping (Result<[User], Error>) -> Void){
+        
+        var seed = "abc"
+        
+        // If not paginating generate a new seed
+        if !pagination{
+            let characters = "abcdefghijklmnopqrstuvwxyz"
+            seed = String(Array(0...2).map {_ in characters.randomElement()! })
+        }
         
         // First check the url has been formed without error
-        guard let url = RandomUserAPI.baseUserUrl() else {
+        guard let url = RandomUserAPI.baseUserUrl(currentPage: currentPage, seed: seed) else {
             OperationQueue.main.addOperation {
                 completion(.failure(UserAPIError.urlError))
             }

@@ -15,9 +15,11 @@ enum EndPoint: String {
 enum RandomUserAPI {
     
     // Have a func for each URL option for future proofing new features
-    static func baseUserUrl() -> URL? {
+    static func baseUserUrl(currentPage: Int, seed: String) -> URL? {
         return randomUserURL(endPoint: .baseURLString, parameters: [
-            "results" : "100"
+            "page" : "\(currentPage)",
+            "results" : "100",
+            "seed" : "\(seed)"
         ])
     }
     
