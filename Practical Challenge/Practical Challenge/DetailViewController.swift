@@ -56,7 +56,7 @@ class DetailViewController: UIViewController {
         
         let detailStack = UIStackView(arrangedSubviews: [titleLabel, nameLabel, ageLabel, dobLabel, emailLabel, phoneLabel, cellLabel])
         detailStack.axis = .vertical
-        detailStack.spacing = 10
+        detailStack.spacing = 5
         detailStack.distribution = .fillEqually
         detailStack.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(detailStack)
@@ -70,7 +70,7 @@ class DetailViewController: UIViewController {
             detailStack.topAnchor.constraint(equalTo: photoImage.safeAreaLayoutGuide.bottomAnchor, constant: 16),
             detailStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             detailStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            detailStack.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor)
+            detailStack.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
         ])
     }
     
