@@ -17,6 +17,11 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func loadView() {
         view = UIView()
         navigationItem.title = "Users"
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         
         // MARK: - Table View
         userTableView.dataSource = self
@@ -39,11 +44,7 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
             userTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             userTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        
         fetchNewUsers(pagination: false)
     }
     
