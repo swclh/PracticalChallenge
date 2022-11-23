@@ -11,7 +11,6 @@
 		14C0D76ABC6202A01D7F0FD0 /* Pods_UserListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA800E8D46B9D29AD241136 /* Pods_UserListUITests.framework */; };
 		59EBB20C292EAE8100E029C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB20B292EAE8100E029C4 /* AppDelegate.swift */; };
 		59EBB20E292EAE8100E029C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB20D292EAE8100E029C4 /* SceneDelegate.swift */; };
-		59EBB210292EAE8100E029C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB20F292EAE8100E029C4 /* ViewController.swift */; };
 		59EBB213292EAE8100E029C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59EBB211292EAE8100E029C4 /* Main.storyboard */; };
 		59EBB216292EAE8100E029C4 /* UserList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB214292EAE8100E029C4 /* UserList.xcdatamodeld */; };
 		59EBB218292EAE8400E029C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59EBB217292EAE8400E029C4 /* Assets.xcassets */; };
@@ -85,6 +84,21 @@
 		59EBB294292EB71C00E029C4 /* ULDob+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB254292EB71B00E029C4 /* ULDob+CoreDataClass.swift */; };
 		59EBB295292EB71C00E029C4 /* ULDob+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB254292EB71B00E029C4 /* ULDob+CoreDataClass.swift */; };
 		59EBB296292EB71C00E029C4 /* ULDob+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB254292EB71B00E029C4 /* ULDob+CoreDataClass.swift */; };
+		59EBB29B292EB82800E029C4 /* ULTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB29A292EB82800E029C4 /* ULTableViewController.swift */; };
+		59EBB29C292EB82800E029C4 /* ULTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB29A292EB82800E029C4 /* ULTableViewController.swift */; };
+		59EBB29D292EB82800E029C4 /* ULTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB29A292EB82800E029C4 /* ULTableViewController.swift */; };
+		59EBB29F292EB83D00E029C4 /* ULDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB29E292EB83D00E029C4 /* ULDetailViewController.swift */; };
+		59EBB2A0292EB83D00E029C4 /* ULDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB29E292EB83D00E029C4 /* ULDetailViewController.swift */; };
+		59EBB2A1292EB83D00E029C4 /* ULDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB29E292EB83D00E029C4 /* ULDetailViewController.swift */; };
+		59EBB2A3292EB86C00E029C4 /* ULViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB2A2292EB86C00E029C4 /* ULViewModel.swift */; };
+		59EBB2A4292EB86C00E029C4 /* ULViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB2A2292EB86C00E029C4 /* ULViewModel.swift */; };
+		59EBB2A5292EB86C00E029C4 /* ULViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB2A2292EB86C00E029C4 /* ULViewModel.swift */; };
+		59EBB2A7292EB88D00E029C4 /* ULTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB2A6292EB88D00E029C4 /* ULTableViewCell.swift */; };
+		59EBB2A8292EB88D00E029C4 /* ULTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB2A6292EB88D00E029C4 /* ULTableViewCell.swift */; };
+		59EBB2A9292EB88D00E029C4 /* ULTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB2A6292EB88D00E029C4 /* ULTableViewCell.swift */; };
+		59EBB2AC292EBA8300E029C4 /* ULExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB2AB292EBA8300E029C4 /* ULExtensions.swift */; };
+		59EBB2AD292EBA8300E029C4 /* ULExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB2AB292EBA8300E029C4 /* ULExtensions.swift */; };
+		59EBB2AE292EBA8300E029C4 /* ULExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB2AB292EBA8300E029C4 /* ULExtensions.swift */; };
 		FAA843CCE39796C43DC9B9BD /* Pods_UserListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1209825A3D867E9E2DB133 /* Pods_UserListTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,7 +124,6 @@
 		59EBB208292EAE8100E029C4 /* UserList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59EBB20B292EAE8100E029C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59EBB20D292EAE8100E029C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		59EBB20F292EAE8100E029C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		59EBB212292EAE8100E029C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59EBB215292EAE8100E029C4 /* UserList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserList.xcdatamodel; sourceTree = "<group>"; };
 		59EBB217292EAE8400E029C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,6 +156,11 @@
 		59EBB252292EB71B00E029C4 /* ULUser+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULUser+CoreDataClass.swift"; sourceTree = "<group>"; };
 		59EBB253292EB71B00E029C4 /* ULDob+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULDob+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		59EBB254292EB71B00E029C4 /* ULDob+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULDob+CoreDataClass.swift"; sourceTree = "<group>"; };
+		59EBB29A292EB82800E029C4 /* ULTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ULTableViewController.swift; sourceTree = "<group>"; };
+		59EBB29E292EB83D00E029C4 /* ULDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ULDetailViewController.swift; sourceTree = "<group>"; };
+		59EBB2A2292EB86C00E029C4 /* ULViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ULViewModel.swift; sourceTree = "<group>"; };
+		59EBB2A6292EB88D00E029C4 /* ULTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ULTableViewCell.swift; sourceTree = "<group>"; };
+		59EBB2AB292EBA8300E029C4 /* ULExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ULExtensions.swift; sourceTree = "<group>"; };
 		7A8C02B462F8ABD22B48056B /* Pods-UserListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserListTests.release.xcconfig"; path = "Target Support Files/Pods-UserListTests/Pods-UserListTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB1209825A3D867E9E2DB133 /* Pods_UserListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UserListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C23DCE542C245C57EC8626A4 /* Pods-UserListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserListUITests.release.xcconfig"; path = "Target Support Files/Pods-UserListUITests/Pods-UserListUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,9 +238,12 @@
 			isa = PBXGroup;
 			children = (
 				59EBB23E292EB71B00E029C4 /* Model */,
+				59EBB297292EB78D00E029C4 /* ViewModel */,
+				59EBB298292EB79500E029C4 /* ViewController */,
+				59EBB299292EB79C00E029C4 /* View */,
+				59EBB2AA292EBA6F00E029C4 /* Tool */,
 				59EBB20B292EAE8100E029C4 /* AppDelegate.swift */,
 				59EBB20D292EAE8100E029C4 /* SceneDelegate.swift */,
-				59EBB20F292EAE8100E029C4 /* ViewController.swift */,
 				59EBB211292EAE8100E029C4 /* Main.storyboard */,
 				59EBB217292EAE8400E029C4 /* Assets.xcassets */,
 				59EBB219292EAE8400E029C4 /* LaunchScreen.storyboard */,
@@ -276,6 +297,39 @@
 				59EBB254292EB71B00E029C4 /* ULDob+CoreDataClass.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		59EBB297292EB78D00E029C4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				59EBB2A2292EB86C00E029C4 /* ULViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		59EBB298292EB79500E029C4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				59EBB29A292EB82800E029C4 /* ULTableViewController.swift */,
+				59EBB29E292EB83D00E029C4 /* ULDetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		59EBB299292EB79C00E029C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				59EBB2A6292EB88D00E029C4 /* ULTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		59EBB2AA292EBA6F00E029C4 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				59EBB2AB292EBA8300E029C4 /* ULExtensions.swift */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		9A66A07B7EAFE5210D0602AA /* Frameworks */ = {
@@ -547,16 +601,20 @@
 			files = (
 				59EBB279292EB71C00E029C4 /* ULStreet+CoreDataProperties.swift in Sources */,
 				59EBB282292EB71C00E029C4 /* ULUser+CoreDataProperties.swift in Sources */,
+				59EBB2AC292EBA8300E029C4 /* ULExtensions.swift in Sources */,
 				59EBB264292EB71C00E029C4 /* ULLogin+CoreDataClass.swift in Sources */,
 				59EBB26A292EB71C00E029C4 /* ULID+CoreDataProperties.swift in Sources */,
 				59EBB285292EB71C00E029C4 /* ULTimezone+CoreDataClass.swift in Sources */,
 				59EBB261292EB71C00E029C4 /* ULCoordinates+CoreDataClass.swift in Sources */,
+				59EBB2A7292EB88D00E029C4 /* ULTableViewCell.swift in Sources */,
 				59EBB288292EB71C00E029C4 /* ULCoordinates+CoreDataProperties.swift in Sources */,
 				59EBB258292EB71B00E029C4 /* ULLogin+CoreDataProperties.swift in Sources */,
 				59EBB27F292EB71C00E029C4 /* ULTimezone+CoreDataProperties.swift in Sources */,
 				59EBB273292EB71C00E029C4 /* ULLocation+CoreDataClass.swift in Sources */,
+				59EBB29F292EB83D00E029C4 /* ULDetailViewController.swift in Sources */,
 				59EBB294292EB71C00E029C4 /* ULDob+CoreDataClass.swift in Sources */,
 				59EBB28B292EB71C00E029C4 /* ULPicture+CoreDataProperties.swift in Sources */,
+				59EBB29B292EB82800E029C4 /* ULTableViewController.swift in Sources */,
 				59EBB276292EB71C00E029C4 /* ULID+CoreDataClass.swift in Sources */,
 				59EBB216292EAE8100E029C4 /* UserList.xcdatamodeld in Sources */,
 				59EBB26D292EB71C00E029C4 /* ULLocation+CoreDataProperties.swift in Sources */,
@@ -566,7 +624,7 @@
 				59EBB291292EB71C00E029C4 /* ULDob+CoreDataProperties.swift in Sources */,
 				59EBB28E292EB71C00E029C4 /* ULUser+CoreDataClass.swift in Sources */,
 				59EBB267292EB71C00E029C4 /* ULStreet+CoreDataClass.swift in Sources */,
-				59EBB210292EAE8100E029C4 /* ViewController.swift in Sources */,
+				59EBB2A3292EB86C00E029C4 /* ULViewModel.swift in Sources */,
 				59EBB270292EB71C00E029C4 /* ULRegistered+CoreDataClass.swift in Sources */,
 				59EBB255292EB71B00E029C4 /* ULName+CoreDataProperties.swift in Sources */,
 				59EBB20C292EAE8100E029C4 /* AppDelegate.swift in Sources */,
@@ -581,11 +639,14 @@
 				59EBB262292EB71C00E029C4 /* ULCoordinates+CoreDataClass.swift in Sources */,
 				59EBB286292EB71C00E029C4 /* ULTimezone+CoreDataClass.swift in Sources */,
 				59EBB27A292EB71C00E029C4 /* ULStreet+CoreDataProperties.swift in Sources */,
+				59EBB2A8292EB88D00E029C4 /* ULTableViewCell.swift in Sources */,
 				59EBB26B292EB71C00E029C4 /* ULID+CoreDataProperties.swift in Sources */,
 				59EBB283292EB71C00E029C4 /* ULUser+CoreDataProperties.swift in Sources */,
 				59EBB28F292EB71C00E029C4 /* ULUser+CoreDataClass.swift in Sources */,
+				59EBB29C292EB82800E029C4 /* ULTableViewController.swift in Sources */,
 				59EBB259292EB71B00E029C4 /* ULLogin+CoreDataProperties.swift in Sources */,
 				59EBB226292EAE8400E029C4 /* UserListTests.swift in Sources */,
+				59EBB2A4292EB86C00E029C4 /* ULViewModel.swift in Sources */,
 				59EBB292292EB71C00E029C4 /* ULDob+CoreDataProperties.swift in Sources */,
 				59EBB27D292EB71C00E029C4 /* ULPicture+CoreDataClass.swift in Sources */,
 				59EBB268292EB71C00E029C4 /* ULStreet+CoreDataClass.swift in Sources */,
@@ -597,6 +658,8 @@
 				59EBB26E292EB71C00E029C4 /* ULLocation+CoreDataProperties.swift in Sources */,
 				59EBB265292EB71C00E029C4 /* ULLogin+CoreDataClass.swift in Sources */,
 				59EBB280292EB71C00E029C4 /* ULTimezone+CoreDataProperties.swift in Sources */,
+				59EBB2AD292EBA8300E029C4 /* ULExtensions.swift in Sources */,
+				59EBB2A0292EB83D00E029C4 /* ULDetailViewController.swift in Sources */,
 				59EBB271292EB71C00E029C4 /* ULRegistered+CoreDataClass.swift in Sources */,
 				59EBB28C292EB71C00E029C4 /* ULPicture+CoreDataProperties.swift in Sources */,
 				59EBB289292EB71C00E029C4 /* ULCoordinates+CoreDataProperties.swift in Sources */,
@@ -614,20 +677,25 @@
 				59EBB284292EB71C00E029C4 /* ULUser+CoreDataProperties.swift in Sources */,
 				59EBB28D292EB71C00E029C4 /* ULPicture+CoreDataProperties.swift in Sources */,
 				59EBB260292EB71B00E029C4 /* ULRegistered+CoreDataProperties.swift in Sources */,
+				59EBB2AE292EBA8300E029C4 /* ULExtensions.swift in Sources */,
 				59EBB296292EB71C00E029C4 /* ULDob+CoreDataClass.swift in Sources */,
 				59EBB263292EB71C00E029C4 /* ULCoordinates+CoreDataClass.swift in Sources */,
+				59EBB2A9292EB88D00E029C4 /* ULTableViewCell.swift in Sources */,
 				59EBB272292EB71C00E029C4 /* ULRegistered+CoreDataClass.swift in Sources */,
 				59EBB266292EB71C00E029C4 /* ULLogin+CoreDataClass.swift in Sources */,
 				59EBB27B292EB71C00E029C4 /* ULStreet+CoreDataProperties.swift in Sources */,
 				59EBB278292EB71C00E029C4 /* ULID+CoreDataClass.swift in Sources */,
+				59EBB2A5292EB86C00E029C4 /* ULViewModel.swift in Sources */,
 				59EBB281292EB71C00E029C4 /* ULTimezone+CoreDataProperties.swift in Sources */,
 				59EBB27E292EB71C00E029C4 /* ULPicture+CoreDataClass.swift in Sources */,
 				59EBB26C292EB71C00E029C4 /* ULID+CoreDataProperties.swift in Sources */,
 				59EBB269292EB71C00E029C4 /* ULStreet+CoreDataClass.swift in Sources */,
+				59EBB2A1292EB83D00E029C4 /* ULDetailViewController.swift in Sources */,
 				59EBB232292EAE8400E029C4 /* UserListUITestsLaunchTests.swift in Sources */,
 				59EBB230292EAE8400E029C4 /* UserListUITests.swift in Sources */,
 				59EBB28A292EB71C00E029C4 /* ULCoordinates+CoreDataProperties.swift in Sources */,
 				59EBB293292EB71C00E029C4 /* ULDob+CoreDataProperties.swift in Sources */,
+				59EBB29D292EB82800E029C4 /* ULTableViewController.swift in Sources */,
 				59EBB26F292EB71C00E029C4 /* ULLocation+CoreDataProperties.swift in Sources */,
 				59EBB287292EB71C00E029C4 /* ULTimezone+CoreDataClass.swift in Sources */,
 				59EBB257292EB71B00E029C4 /* ULName+CoreDataProperties.swift in Sources */,
