@@ -19,6 +19,72 @@
 		59EBB226292EAE8400E029C4 /* UserListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB225292EAE8400E029C4 /* UserListTests.swift */; };
 		59EBB230292EAE8400E029C4 /* UserListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB22F292EAE8400E029C4 /* UserListUITests.swift */; };
 		59EBB232292EAE8400E029C4 /* UserListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB231292EAE8400E029C4 /* UserListUITestsLaunchTests.swift */; };
+		59EBB255292EB71B00E029C4 /* ULName+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB23F292EB71B00E029C4 /* ULName+CoreDataProperties.swift */; };
+		59EBB256292EB71B00E029C4 /* ULName+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB23F292EB71B00E029C4 /* ULName+CoreDataProperties.swift */; };
+		59EBB257292EB71B00E029C4 /* ULName+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB23F292EB71B00E029C4 /* ULName+CoreDataProperties.swift */; };
+		59EBB258292EB71B00E029C4 /* ULLogin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB240292EB71B00E029C4 /* ULLogin+CoreDataProperties.swift */; };
+		59EBB259292EB71B00E029C4 /* ULLogin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB240292EB71B00E029C4 /* ULLogin+CoreDataProperties.swift */; };
+		59EBB25A292EB71B00E029C4 /* ULLogin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB240292EB71B00E029C4 /* ULLogin+CoreDataProperties.swift */; };
+		59EBB25B292EB71B00E029C4 /* ULName+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB241292EB71B00E029C4 /* ULName+CoreDataClass.swift */; };
+		59EBB25C292EB71B00E029C4 /* ULName+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB241292EB71B00E029C4 /* ULName+CoreDataClass.swift */; };
+		59EBB25D292EB71B00E029C4 /* ULName+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB241292EB71B00E029C4 /* ULName+CoreDataClass.swift */; };
+		59EBB25E292EB71B00E029C4 /* ULRegistered+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB242292EB71B00E029C4 /* ULRegistered+CoreDataProperties.swift */; };
+		59EBB25F292EB71B00E029C4 /* ULRegistered+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB242292EB71B00E029C4 /* ULRegistered+CoreDataProperties.swift */; };
+		59EBB260292EB71B00E029C4 /* ULRegistered+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB242292EB71B00E029C4 /* ULRegistered+CoreDataProperties.swift */; };
+		59EBB261292EB71C00E029C4 /* ULCoordinates+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB243292EB71B00E029C4 /* ULCoordinates+CoreDataClass.swift */; };
+		59EBB262292EB71C00E029C4 /* ULCoordinates+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB243292EB71B00E029C4 /* ULCoordinates+CoreDataClass.swift */; };
+		59EBB263292EB71C00E029C4 /* ULCoordinates+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB243292EB71B00E029C4 /* ULCoordinates+CoreDataClass.swift */; };
+		59EBB264292EB71C00E029C4 /* ULLogin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB244292EB71B00E029C4 /* ULLogin+CoreDataClass.swift */; };
+		59EBB265292EB71C00E029C4 /* ULLogin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB244292EB71B00E029C4 /* ULLogin+CoreDataClass.swift */; };
+		59EBB266292EB71C00E029C4 /* ULLogin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB244292EB71B00E029C4 /* ULLogin+CoreDataClass.swift */; };
+		59EBB267292EB71C00E029C4 /* ULStreet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB245292EB71B00E029C4 /* ULStreet+CoreDataClass.swift */; };
+		59EBB268292EB71C00E029C4 /* ULStreet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB245292EB71B00E029C4 /* ULStreet+CoreDataClass.swift */; };
+		59EBB269292EB71C00E029C4 /* ULStreet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB245292EB71B00E029C4 /* ULStreet+CoreDataClass.swift */; };
+		59EBB26A292EB71C00E029C4 /* ULID+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB246292EB71B00E029C4 /* ULID+CoreDataProperties.swift */; };
+		59EBB26B292EB71C00E029C4 /* ULID+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB246292EB71B00E029C4 /* ULID+CoreDataProperties.swift */; };
+		59EBB26C292EB71C00E029C4 /* ULID+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB246292EB71B00E029C4 /* ULID+CoreDataProperties.swift */; };
+		59EBB26D292EB71C00E029C4 /* ULLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB247292EB71B00E029C4 /* ULLocation+CoreDataProperties.swift */; };
+		59EBB26E292EB71C00E029C4 /* ULLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB247292EB71B00E029C4 /* ULLocation+CoreDataProperties.swift */; };
+		59EBB26F292EB71C00E029C4 /* ULLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB247292EB71B00E029C4 /* ULLocation+CoreDataProperties.swift */; };
+		59EBB270292EB71C00E029C4 /* ULRegistered+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB248292EB71B00E029C4 /* ULRegistered+CoreDataClass.swift */; };
+		59EBB271292EB71C00E029C4 /* ULRegistered+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB248292EB71B00E029C4 /* ULRegistered+CoreDataClass.swift */; };
+		59EBB272292EB71C00E029C4 /* ULRegistered+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB248292EB71B00E029C4 /* ULRegistered+CoreDataClass.swift */; };
+		59EBB273292EB71C00E029C4 /* ULLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB249292EB71B00E029C4 /* ULLocation+CoreDataClass.swift */; };
+		59EBB274292EB71C00E029C4 /* ULLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB249292EB71B00E029C4 /* ULLocation+CoreDataClass.swift */; };
+		59EBB275292EB71C00E029C4 /* ULLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB249292EB71B00E029C4 /* ULLocation+CoreDataClass.swift */; };
+		59EBB276292EB71C00E029C4 /* ULID+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24A292EB71B00E029C4 /* ULID+CoreDataClass.swift */; };
+		59EBB277292EB71C00E029C4 /* ULID+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24A292EB71B00E029C4 /* ULID+CoreDataClass.swift */; };
+		59EBB278292EB71C00E029C4 /* ULID+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24A292EB71B00E029C4 /* ULID+CoreDataClass.swift */; };
+		59EBB279292EB71C00E029C4 /* ULStreet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24B292EB71B00E029C4 /* ULStreet+CoreDataProperties.swift */; };
+		59EBB27A292EB71C00E029C4 /* ULStreet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24B292EB71B00E029C4 /* ULStreet+CoreDataProperties.swift */; };
+		59EBB27B292EB71C00E029C4 /* ULStreet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24B292EB71B00E029C4 /* ULStreet+CoreDataProperties.swift */; };
+		59EBB27C292EB71C00E029C4 /* ULPicture+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24C292EB71B00E029C4 /* ULPicture+CoreDataClass.swift */; };
+		59EBB27D292EB71C00E029C4 /* ULPicture+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24C292EB71B00E029C4 /* ULPicture+CoreDataClass.swift */; };
+		59EBB27E292EB71C00E029C4 /* ULPicture+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24C292EB71B00E029C4 /* ULPicture+CoreDataClass.swift */; };
+		59EBB27F292EB71C00E029C4 /* ULTimezone+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24D292EB71B00E029C4 /* ULTimezone+CoreDataProperties.swift */; };
+		59EBB280292EB71C00E029C4 /* ULTimezone+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24D292EB71B00E029C4 /* ULTimezone+CoreDataProperties.swift */; };
+		59EBB281292EB71C00E029C4 /* ULTimezone+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24D292EB71B00E029C4 /* ULTimezone+CoreDataProperties.swift */; };
+		59EBB282292EB71C00E029C4 /* ULUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24E292EB71B00E029C4 /* ULUser+CoreDataProperties.swift */; };
+		59EBB283292EB71C00E029C4 /* ULUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24E292EB71B00E029C4 /* ULUser+CoreDataProperties.swift */; };
+		59EBB284292EB71C00E029C4 /* ULUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24E292EB71B00E029C4 /* ULUser+CoreDataProperties.swift */; };
+		59EBB285292EB71C00E029C4 /* ULTimezone+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24F292EB71B00E029C4 /* ULTimezone+CoreDataClass.swift */; };
+		59EBB286292EB71C00E029C4 /* ULTimezone+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24F292EB71B00E029C4 /* ULTimezone+CoreDataClass.swift */; };
+		59EBB287292EB71C00E029C4 /* ULTimezone+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB24F292EB71B00E029C4 /* ULTimezone+CoreDataClass.swift */; };
+		59EBB288292EB71C00E029C4 /* ULCoordinates+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB250292EB71B00E029C4 /* ULCoordinates+CoreDataProperties.swift */; };
+		59EBB289292EB71C00E029C4 /* ULCoordinates+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB250292EB71B00E029C4 /* ULCoordinates+CoreDataProperties.swift */; };
+		59EBB28A292EB71C00E029C4 /* ULCoordinates+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB250292EB71B00E029C4 /* ULCoordinates+CoreDataProperties.swift */; };
+		59EBB28B292EB71C00E029C4 /* ULPicture+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB251292EB71B00E029C4 /* ULPicture+CoreDataProperties.swift */; };
+		59EBB28C292EB71C00E029C4 /* ULPicture+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB251292EB71B00E029C4 /* ULPicture+CoreDataProperties.swift */; };
+		59EBB28D292EB71C00E029C4 /* ULPicture+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB251292EB71B00E029C4 /* ULPicture+CoreDataProperties.swift */; };
+		59EBB28E292EB71C00E029C4 /* ULUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB252292EB71B00E029C4 /* ULUser+CoreDataClass.swift */; };
+		59EBB28F292EB71C00E029C4 /* ULUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB252292EB71B00E029C4 /* ULUser+CoreDataClass.swift */; };
+		59EBB290292EB71C00E029C4 /* ULUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB252292EB71B00E029C4 /* ULUser+CoreDataClass.swift */; };
+		59EBB291292EB71C00E029C4 /* ULDob+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB253292EB71B00E029C4 /* ULDob+CoreDataProperties.swift */; };
+		59EBB292292EB71C00E029C4 /* ULDob+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB253292EB71B00E029C4 /* ULDob+CoreDataProperties.swift */; };
+		59EBB293292EB71C00E029C4 /* ULDob+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB253292EB71B00E029C4 /* ULDob+CoreDataProperties.swift */; };
+		59EBB294292EB71C00E029C4 /* ULDob+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB254292EB71B00E029C4 /* ULDob+CoreDataClass.swift */; };
+		59EBB295292EB71C00E029C4 /* ULDob+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB254292EB71B00E029C4 /* ULDob+CoreDataClass.swift */; };
+		59EBB296292EB71C00E029C4 /* ULDob+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB254292EB71B00E029C4 /* ULDob+CoreDataClass.swift */; };
 		FAA843CCE39796C43DC9B9BD /* Pods_UserListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB1209825A3D867E9E2DB133 /* Pods_UserListTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +121,28 @@
 		59EBB22B292EAE8400E029C4 /* UserListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59EBB22F292EAE8400E029C4 /* UserListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListUITests.swift; sourceTree = "<group>"; };
 		59EBB231292EAE8400E029C4 /* UserListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		59EBB23F292EB71B00E029C4 /* ULName+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULName+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		59EBB240292EB71B00E029C4 /* ULLogin+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULLogin+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		59EBB241292EB71B00E029C4 /* ULName+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULName+CoreDataClass.swift"; sourceTree = "<group>"; };
+		59EBB242292EB71B00E029C4 /* ULRegistered+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULRegistered+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		59EBB243292EB71B00E029C4 /* ULCoordinates+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULCoordinates+CoreDataClass.swift"; sourceTree = "<group>"; };
+		59EBB244292EB71B00E029C4 /* ULLogin+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULLogin+CoreDataClass.swift"; sourceTree = "<group>"; };
+		59EBB245292EB71B00E029C4 /* ULStreet+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULStreet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		59EBB246292EB71B00E029C4 /* ULID+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULID+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		59EBB247292EB71B00E029C4 /* ULLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		59EBB248292EB71B00E029C4 /* ULRegistered+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULRegistered+CoreDataClass.swift"; sourceTree = "<group>"; };
+		59EBB249292EB71B00E029C4 /* ULLocation+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULLocation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		59EBB24A292EB71B00E029C4 /* ULID+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULID+CoreDataClass.swift"; sourceTree = "<group>"; };
+		59EBB24B292EB71B00E029C4 /* ULStreet+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULStreet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		59EBB24C292EB71B00E029C4 /* ULPicture+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULPicture+CoreDataClass.swift"; sourceTree = "<group>"; };
+		59EBB24D292EB71B00E029C4 /* ULTimezone+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULTimezone+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		59EBB24E292EB71B00E029C4 /* ULUser+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		59EBB24F292EB71B00E029C4 /* ULTimezone+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULTimezone+CoreDataClass.swift"; sourceTree = "<group>"; };
+		59EBB250292EB71B00E029C4 /* ULCoordinates+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULCoordinates+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		59EBB251292EB71B00E029C4 /* ULPicture+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULPicture+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		59EBB252292EB71B00E029C4 /* ULUser+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULUser+CoreDataClass.swift"; sourceTree = "<group>"; };
+		59EBB253292EB71B00E029C4 /* ULDob+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULDob+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		59EBB254292EB71B00E029C4 /* ULDob+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ULDob+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7A8C02B462F8ABD22B48056B /* Pods-UserListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserListTests.release.xcconfig"; path = "Target Support Files/Pods-UserListTests/Pods-UserListTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB1209825A3D867E9E2DB133 /* Pods_UserListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UserListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C23DCE542C245C57EC8626A4 /* Pods-UserListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserListUITests.release.xcconfig"; path = "Target Support Files/Pods-UserListUITests/Pods-UserListUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +219,7 @@
 		59EBB20A292EAE8100E029C4 /* UserList */ = {
 			isa = PBXGroup;
 			children = (
+				59EBB23E292EB71B00E029C4 /* Model */,
 				59EBB20B292EAE8100E029C4 /* AppDelegate.swift */,
 				59EBB20D292EAE8100E029C4 /* SceneDelegate.swift */,
 				59EBB20F292EAE8100E029C4 /* ViewController.swift */,
@@ -158,6 +247,35 @@
 				59EBB231292EAE8400E029C4 /* UserListUITestsLaunchTests.swift */,
 			);
 			path = UserListUITests;
+			sourceTree = "<group>";
+		};
+		59EBB23E292EB71B00E029C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				59EBB23F292EB71B00E029C4 /* ULName+CoreDataProperties.swift */,
+				59EBB240292EB71B00E029C4 /* ULLogin+CoreDataProperties.swift */,
+				59EBB241292EB71B00E029C4 /* ULName+CoreDataClass.swift */,
+				59EBB242292EB71B00E029C4 /* ULRegistered+CoreDataProperties.swift */,
+				59EBB243292EB71B00E029C4 /* ULCoordinates+CoreDataClass.swift */,
+				59EBB244292EB71B00E029C4 /* ULLogin+CoreDataClass.swift */,
+				59EBB245292EB71B00E029C4 /* ULStreet+CoreDataClass.swift */,
+				59EBB246292EB71B00E029C4 /* ULID+CoreDataProperties.swift */,
+				59EBB247292EB71B00E029C4 /* ULLocation+CoreDataProperties.swift */,
+				59EBB248292EB71B00E029C4 /* ULRegistered+CoreDataClass.swift */,
+				59EBB249292EB71B00E029C4 /* ULLocation+CoreDataClass.swift */,
+				59EBB24A292EB71B00E029C4 /* ULID+CoreDataClass.swift */,
+				59EBB24B292EB71B00E029C4 /* ULStreet+CoreDataProperties.swift */,
+				59EBB24C292EB71B00E029C4 /* ULPicture+CoreDataClass.swift */,
+				59EBB24D292EB71B00E029C4 /* ULTimezone+CoreDataProperties.swift */,
+				59EBB24E292EB71B00E029C4 /* ULUser+CoreDataProperties.swift */,
+				59EBB24F292EB71B00E029C4 /* ULTimezone+CoreDataClass.swift */,
+				59EBB250292EB71B00E029C4 /* ULCoordinates+CoreDataProperties.swift */,
+				59EBB251292EB71B00E029C4 /* ULPicture+CoreDataProperties.swift */,
+				59EBB252292EB71B00E029C4 /* ULUser+CoreDataClass.swift */,
+				59EBB253292EB71B00E029C4 /* ULDob+CoreDataProperties.swift */,
+				59EBB254292EB71B00E029C4 /* ULDob+CoreDataClass.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9A66A07B7EAFE5210D0602AA /* Frameworks */ = {
@@ -427,8 +545,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59EBB279292EB71C00E029C4 /* ULStreet+CoreDataProperties.swift in Sources */,
+				59EBB282292EB71C00E029C4 /* ULUser+CoreDataProperties.swift in Sources */,
+				59EBB264292EB71C00E029C4 /* ULLogin+CoreDataClass.swift in Sources */,
+				59EBB26A292EB71C00E029C4 /* ULID+CoreDataProperties.swift in Sources */,
+				59EBB285292EB71C00E029C4 /* ULTimezone+CoreDataClass.swift in Sources */,
+				59EBB261292EB71C00E029C4 /* ULCoordinates+CoreDataClass.swift in Sources */,
+				59EBB288292EB71C00E029C4 /* ULCoordinates+CoreDataProperties.swift in Sources */,
+				59EBB258292EB71B00E029C4 /* ULLogin+CoreDataProperties.swift in Sources */,
+				59EBB27F292EB71C00E029C4 /* ULTimezone+CoreDataProperties.swift in Sources */,
+				59EBB273292EB71C00E029C4 /* ULLocation+CoreDataClass.swift in Sources */,
+				59EBB294292EB71C00E029C4 /* ULDob+CoreDataClass.swift in Sources */,
+				59EBB28B292EB71C00E029C4 /* ULPicture+CoreDataProperties.swift in Sources */,
+				59EBB276292EB71C00E029C4 /* ULID+CoreDataClass.swift in Sources */,
 				59EBB216292EAE8100E029C4 /* UserList.xcdatamodeld in Sources */,
+				59EBB26D292EB71C00E029C4 /* ULLocation+CoreDataProperties.swift in Sources */,
+				59EBB25E292EB71B00E029C4 /* ULRegistered+CoreDataProperties.swift in Sources */,
+				59EBB25B292EB71B00E029C4 /* ULName+CoreDataClass.swift in Sources */,
+				59EBB27C292EB71C00E029C4 /* ULPicture+CoreDataClass.swift in Sources */,
+				59EBB291292EB71C00E029C4 /* ULDob+CoreDataProperties.swift in Sources */,
+				59EBB28E292EB71C00E029C4 /* ULUser+CoreDataClass.swift in Sources */,
+				59EBB267292EB71C00E029C4 /* ULStreet+CoreDataClass.swift in Sources */,
 				59EBB210292EAE8100E029C4 /* ViewController.swift in Sources */,
+				59EBB270292EB71C00E029C4 /* ULRegistered+CoreDataClass.swift in Sources */,
+				59EBB255292EB71B00E029C4 /* ULName+CoreDataProperties.swift in Sources */,
 				59EBB20C292EAE8100E029C4 /* AppDelegate.swift in Sources */,
 				59EBB20E292EAE8100E029C4 /* SceneDelegate.swift in Sources */,
 			);
@@ -438,7 +578,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59EBB262292EB71C00E029C4 /* ULCoordinates+CoreDataClass.swift in Sources */,
+				59EBB286292EB71C00E029C4 /* ULTimezone+CoreDataClass.swift in Sources */,
+				59EBB27A292EB71C00E029C4 /* ULStreet+CoreDataProperties.swift in Sources */,
+				59EBB26B292EB71C00E029C4 /* ULID+CoreDataProperties.swift in Sources */,
+				59EBB283292EB71C00E029C4 /* ULUser+CoreDataProperties.swift in Sources */,
+				59EBB28F292EB71C00E029C4 /* ULUser+CoreDataClass.swift in Sources */,
+				59EBB259292EB71B00E029C4 /* ULLogin+CoreDataProperties.swift in Sources */,
 				59EBB226292EAE8400E029C4 /* UserListTests.swift in Sources */,
+				59EBB292292EB71C00E029C4 /* ULDob+CoreDataProperties.swift in Sources */,
+				59EBB27D292EB71C00E029C4 /* ULPicture+CoreDataClass.swift in Sources */,
+				59EBB268292EB71C00E029C4 /* ULStreet+CoreDataClass.swift in Sources */,
+				59EBB277292EB71C00E029C4 /* ULID+CoreDataClass.swift in Sources */,
+				59EBB256292EB71B00E029C4 /* ULName+CoreDataProperties.swift in Sources */,
+				59EBB295292EB71C00E029C4 /* ULDob+CoreDataClass.swift in Sources */,
+				59EBB25C292EB71B00E029C4 /* ULName+CoreDataClass.swift in Sources */,
+				59EBB274292EB71C00E029C4 /* ULLocation+CoreDataClass.swift in Sources */,
+				59EBB26E292EB71C00E029C4 /* ULLocation+CoreDataProperties.swift in Sources */,
+				59EBB265292EB71C00E029C4 /* ULLogin+CoreDataClass.swift in Sources */,
+				59EBB280292EB71C00E029C4 /* ULTimezone+CoreDataProperties.swift in Sources */,
+				59EBB271292EB71C00E029C4 /* ULRegistered+CoreDataClass.swift in Sources */,
+				59EBB28C292EB71C00E029C4 /* ULPicture+CoreDataProperties.swift in Sources */,
+				59EBB289292EB71C00E029C4 /* ULCoordinates+CoreDataProperties.swift in Sources */,
+				59EBB25F292EB71B00E029C4 /* ULRegistered+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,8 +608,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59EBB25A292EB71B00E029C4 /* ULLogin+CoreDataProperties.swift in Sources */,
+				59EBB275292EB71C00E029C4 /* ULLocation+CoreDataClass.swift in Sources */,
+				59EBB25D292EB71B00E029C4 /* ULName+CoreDataClass.swift in Sources */,
+				59EBB284292EB71C00E029C4 /* ULUser+CoreDataProperties.swift in Sources */,
+				59EBB28D292EB71C00E029C4 /* ULPicture+CoreDataProperties.swift in Sources */,
+				59EBB260292EB71B00E029C4 /* ULRegistered+CoreDataProperties.swift in Sources */,
+				59EBB296292EB71C00E029C4 /* ULDob+CoreDataClass.swift in Sources */,
+				59EBB263292EB71C00E029C4 /* ULCoordinates+CoreDataClass.swift in Sources */,
+				59EBB272292EB71C00E029C4 /* ULRegistered+CoreDataClass.swift in Sources */,
+				59EBB266292EB71C00E029C4 /* ULLogin+CoreDataClass.swift in Sources */,
+				59EBB27B292EB71C00E029C4 /* ULStreet+CoreDataProperties.swift in Sources */,
+				59EBB278292EB71C00E029C4 /* ULID+CoreDataClass.swift in Sources */,
+				59EBB281292EB71C00E029C4 /* ULTimezone+CoreDataProperties.swift in Sources */,
+				59EBB27E292EB71C00E029C4 /* ULPicture+CoreDataClass.swift in Sources */,
+				59EBB26C292EB71C00E029C4 /* ULID+CoreDataProperties.swift in Sources */,
+				59EBB269292EB71C00E029C4 /* ULStreet+CoreDataClass.swift in Sources */,
 				59EBB232292EAE8400E029C4 /* UserListUITestsLaunchTests.swift in Sources */,
 				59EBB230292EAE8400E029C4 /* UserListUITests.swift in Sources */,
+				59EBB28A292EB71C00E029C4 /* ULCoordinates+CoreDataProperties.swift in Sources */,
+				59EBB293292EB71C00E029C4 /* ULDob+CoreDataProperties.swift in Sources */,
+				59EBB26F292EB71C00E029C4 /* ULLocation+CoreDataProperties.swift in Sources */,
+				59EBB287292EB71C00E029C4 /* ULTimezone+CoreDataClass.swift in Sources */,
+				59EBB257292EB71B00E029C4 /* ULName+CoreDataProperties.swift in Sources */,
+				59EBB290292EB71C00E029C4 /* ULUser+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
