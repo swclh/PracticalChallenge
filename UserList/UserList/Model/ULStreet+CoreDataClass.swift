@@ -10,6 +10,13 @@ import Foundation
 import CoreData
 
 @objc(ULStreet)
-public class ULStreet: NSManagedObject {
-
+public class ULStreet: ULManagedObject {
+    override public func setData(_ data: [String : Any]) {
+        name = data["name"] as? String
+        number = data["number"] as? Int64 ?? 0
+    }
+    
+    public func getStreet() -> String {
+        return (String(number) + " " + (name ?? ""))
+    }
 }

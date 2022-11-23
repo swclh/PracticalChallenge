@@ -10,6 +10,9 @@ import Foundation
 import CoreData
 
 @objc(ULDob)
-public class ULDob: NSManagedObject {
-
+public class ULDob: ULManagedObject {
+    override public func setData(_ data: [String : Any]) {
+        age = data["age"] as! Int64
+        date = data["date"] as? String
+    }
 }

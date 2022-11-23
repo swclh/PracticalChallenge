@@ -10,6 +10,9 @@ import Foundation
 import CoreData
 
 @objc(ULCoordinates)
-public class ULCoordinates: NSManagedObject {
-
+public class ULCoordinates: ULManagedObject {
+    override public func setData(_ data: [String : Any]) {
+        latitude = data["latitude"] as? String
+        longitude = data["longitude"] as? String
+    }
 }

@@ -10,6 +10,9 @@ import Foundation
 import CoreData
 
 @objc(ULID)
-public class ULID: NSManagedObject {
-
+public class ULID: ULManagedObject {
+    override public func setData(_ data: [String : Any]) {
+        name = data["name"] as? String
+        value = data["value"] as? String
+    }
 }
