@@ -7,11 +7,16 @@
 
 import XCTest
 @testable import UserList
+import UIKit
+import CoreData
 
 final class UserListTests: XCTestCase {
 
+    var appDelegate: UserList.AppDelegate!
+    let viewModel = ULViewModel()
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        appDelegate = (UIApplication.shared.delegate as! UserList.AppDelegate)
     }
 
     override func tearDownWithError() throws {
@@ -26,6 +31,24 @@ final class UserListTests: XCTestCase {
         // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
     }
 
+    func testConfigureData() throws {
+        viewModel.configureData {
+            print("configureData")
+        }
+    }
+    
+    func testLoadMoreData() throws {
+        viewModel.loadMoreData {
+            print("loadMoreData")
+        }
+    }
+    
+    func testSearchData() throws {
+        viewModel.searchData(searchText: "Mr Lilian Petit") {
+            print("searchData")
+        }
+    }
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		04B86D532E462A3F21975059 /* Pods_UserList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C38B0AE9E6C7A7BC1F8567 /* Pods_UserList.framework */; };
 		14C0D76ABC6202A01D7F0FD0 /* Pods_UserListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA800E8D46B9D29AD241136 /* Pods_UserListUITests.framework */; };
-		596EBB37292EFCE1003E06B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB20B292EAE8100E029C4 /* AppDelegate.swift */; };
-		596EBB38292EFCFB003E06B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB20B292EAE8100E029C4 /* AppDelegate.swift */; };
 		59EBB20C292EAE8100E029C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB20B292EAE8100E029C4 /* AppDelegate.swift */; };
 		59EBB20E292EAE8100E029C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EBB20D292EAE8100E029C4 /* SceneDelegate.swift */; };
 		59EBB213292EAE8100E029C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59EBB211292EAE8100E029C4 /* Main.storyboard */; };
@@ -656,7 +654,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				596EBB38292EFCFB003E06B1 /* AppDelegate.swift in Sources */,
 				59EBB262292EB71C00E029C4 /* ULCoordinates+CoreDataClass.swift in Sources */,
 				59EBB286292EB71C00E029C4 /* ULTimezone+CoreDataClass.swift in Sources */,
 				59EBB27A292EB71C00E029C4 /* ULStreet+CoreDataProperties.swift in Sources */,
@@ -695,7 +692,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				596EBB37292EFCE1003E06B1 /* AppDelegate.swift in Sources */,
 				59EBB25A292EB71B00E029C4 /* ULLogin+CoreDataProperties.swift in Sources */,
 				59EBB275292EB71C00E029C4 /* ULLocation+CoreDataClass.swift in Sources */,
 				59EBB25D292EB71B00E029C4 /* ULName+CoreDataClass.swift in Sources */,
