@@ -85,7 +85,7 @@
                                     <outlet property="dobLabel" destination="CDS-mH-uXd" id="Ik1-4l-scY"/>
                                     <outlet property="genderLabel" destination="Ldd-le-VdI" id="iQe-KV-JIt"/>
                                     <outlet property="nameLabel" destination="mrk-dv-LIR" id="M3x-Ee-v6x"/>
-                                    <segue destination="vkX-KN-aKf" kind="show" id="jIk-Rz-TCO"/>
+                                    <segue destination="vkX-KN-aKf" kind="show" identifier="ULDetailViewController" id="jIk-Rz-TCO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -103,7 +103,7 @@
         <!--Detail-->
         <scene sceneID="oM7-bX-wGD">
             <objects>
-                <viewController id="vkX-KN-aKf" sceneMemberID="viewController">
+                <viewController id="vkX-KN-aKf" customClass="ULDetailViewController" customModule="UserList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kJh-bk-W2B">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
