@@ -30,12 +30,30 @@ final class UserListUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    func testDetail() throws {
+        // UI tests must launch the application that they test.
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.tables/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"Miss Christiane Hobberstad").element.tap()/*[[".cells.containing(.staticText, identifier:\"1945-08-10T09:47:23.888Z\").element",".tap()",".press(forDuration: 1.7);",".cells.containing(.staticText, identifier:\"Miss Christiane Hobberstad\").element"],[[[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,1]]@END_MENU_TOKEN@*/
+        app.navigationBars["Detail"].buttons["User List"].tap()
+    }
+    
+    func testSearch() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let tablesQuery = app.tables
+        tablesQuery.searchFields["Search"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"Mr Austin Gonzales").element/*[[".cells.containing(.staticText, identifier:\"1958-09-16T08:48:06.641Z\").element",".cells.containing(.staticText, identifier:\"male\").element",".cells.containing(.staticText, identifier:\"Mr Austin Gonzales\").element"],[[[-1,2],[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.navigationBars["Detail"].buttons["User List"].tap()
+    }
+
+    func testScroll() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let tablesQuery = app.tables
+        tablesQuery.cells.containing(.staticText, identifier:"Mr Lilian Petit").element.swipeUp(velocity: XCUIGestureVelocity(2000))
     }
 }
