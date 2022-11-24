@@ -44,6 +44,14 @@ class ULViewModel: NSObject {
             callback()
         }
     }
+    
+    func loadMoreData(callback: @escaping () -> ()) {
+        ULNetworkClient.fetchCachedData { isCached in
+            self.fetchResults.fetchRequest.fetchLimit = ULNetworkClient.loadPage * count_per_page
+            try? self.fetchResults.performFetch()
+            callback()
+        }
+    }
 }
 
 extension ULViewModel: NSFetchedResultsControllerDelegate {

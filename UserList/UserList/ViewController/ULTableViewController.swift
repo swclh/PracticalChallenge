@@ -6,15 +6,27 @@
 //
 
 import UIKit
+import MJRefresh
 
 class ULTableViewController: UITableViewController {
 
     let viewModel = ULViewModel()
+    let footer = MJRefreshAutoNormalFooter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         viewModel.configureData {
+            self.tableView.reloadData()
+        }
+        
+        footer.setRefreshingTarget(self, refreshingAction: #selector(ULTableViewController.footerRefresh))
+        tableView.mj_footer = footer
+    }
+    
+    @objc func footerRefresh() {
+        viewModel.loadMoreData {
+            self.tableView.mj_footer!.endRefreshing()
             self.tableView.reloadData()
         }
     }
