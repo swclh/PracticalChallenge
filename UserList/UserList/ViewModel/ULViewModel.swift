@@ -52,6 +52,19 @@ class ULViewModel: NSObject {
             callback()
         }
     }
+    
+    func searchData(searchText: String, callback: () -> ()) {
+        var predicate: NSPredicate?
+        if searchText.count > 0 {
+            predicate = NSPredicate(format: "(name.lastName contains %@) || (name.firstName contains %@)", searchText, searchText)
+        } else {
+            predicate = nil
+            fetchResults.fetchRequest.fetchLimit = (ULNetworkClient.loadPage - 1) * count_per_page
+        }
+        fetchResults.fetchRequest.predicate = predicate
+        try? fetchResults.performFetch()
+        callback()
+    }
 }
 
 extension ULViewModel: NSFetchedResultsControllerDelegate {

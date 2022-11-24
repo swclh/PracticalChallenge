@@ -12,6 +12,7 @@ class ULTableViewController: UITableViewController {
 
     let viewModel = ULViewModel()
     let footer = MJRefreshAutoNormalFooter()
+    var searchController: UISearchController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,12 @@ class ULTableViewController: UITableViewController {
         
         footer.setRefreshingTarget(self, refreshingAction: #selector(ULTableViewController.footerRefresh))
         tableView.mj_footer = footer
+        
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        tableView.tableHeaderView = searchController.searchBar
     }
     
     // MARK: - Load more data
@@ -60,6 +67,19 @@ class ULTableViewController: UITableViewController {
             if let index = tableView.indexPath(for: cell), let userViewModel = viewModel.getUser(at: index) {
                 destination.userViewModel = userViewModel
             }
+            searchController.dismiss(animated: false)
+        }
+    }
+}
+
+extension ULTableViewController: UISearchControllerDelegate, UISearchResultsUpdating {
+    
+    // MARK: - Search
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchText = searchController.searchBar.text ?? ""
+        
+        viewModel.searchData(searchText: searchText) {
+            self.tableView.reloadData()
         }
     }
 }
